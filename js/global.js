@@ -59,8 +59,10 @@ function resetButton(
   while (inputIds.length > 0) {
     const inputId = inputIds.pop();
     const inputEl = getElement(inputId);
-    inputEl.value = "";
-    inputEl.focus();
+    if (!!inputEl) {
+      inputEl.value = "";
+      inputEl.focus();
+    }
   }
 
   const infoWrapperEl = getElement("info-wrapper");
