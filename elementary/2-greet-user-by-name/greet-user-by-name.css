@@ -1,0 +1,45 @@
+/* target */
+.output p span:nth-child(1) {
+  color: #355C7D;
+  font-size: 30px;
+}
+
+.output p span:nth-child(2) {
+  color: #C26E4A;
+  text-transform: capitalize;
+  animation-name: scalate;
+  animation-duration: .8s;
+  animation-fill-mode: forwards;
+}
+
+.output p span:nth-child(3) {
+  color: white;
+  font-size: 30px;
+  padding: 0 3px;
+  animation-name: pop;
+  animation-delay: .8s;
+  animation-fill-mode: forwards;
+  animation-duration: .2s;
+}
+
+/* animations */
+@keyframes scalate {
+  0% {
+    font-size: 0;
+  }
+  100% {
+    font-size: 30px;
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    color: white;
+  }
+  100% {
+    opacity: 1;
+    color: #C26E4A;
+  }
+}
+

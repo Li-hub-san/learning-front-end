@@ -1,0 +1,9 @@
+
+#output {
+  color: #C26E4A;
+  font-size: 20px;
+}
+
+#output.win {
+  color: #355C7D;
+}

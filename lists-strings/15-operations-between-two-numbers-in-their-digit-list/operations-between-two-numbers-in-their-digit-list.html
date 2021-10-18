@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <!-- FONTS -->
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap"
+        rel="stylesheet">
+
+  <!-- LIBS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/agate.min.css">
+  <link href="/css/all.min.css"
+        rel="stylesheet">
+
+  <!-- GLOBAL -->
+  <link rel="stylesheet"
+        href="/css/global.css">
+  <link rel="stylesheet"
+        href="/css/highlightjs.override.css">
+
+  <!-- SPECIFIC -->
+  <link rel=stylesheet
+        href="operations-between-two-numbers-in-their-digit-list.css">
+
+  <title>My Practice Page!</title>
+</head>
+<body>
+
+<div class="header">
+  <h1><a href="../../index.html">web<span>development</span></a></h1>
+</div>
+
+<div class="container">
+  <div class="elements">
+    <a href="../14-in-number-out-list-of-digits/in-number-out-list-of-digits.html">
+      <i class="fas fa-chevron-left"></i>
+    </a>
+
+    <div class="middle">
+      <a href="../11-merge-two-sorted-lists-into-new-sorted-list/merge-two-sorted-lists-into-new-sorted-list.html"
+         class="exercise-menu">11</a>
+      <a href="../12-rotate-list-by-k-elements/rotate-list-by-k-elements.html"
+         class="exercise-menu">12</a>
+      <a href="../13-compute-first-100-fibonacci-numbers/compute-first-100-fibonacci-numbers.html"
+         class="exercise-menu">13</a>
+      <a href="../14-in-number-out-list-of-digits/in-number-out-list-of-digits.html"
+         class="exercise-menu">14</a>
+      <a href="operations-between-two-numbers-in-their-digit-list.html"
+         class="exercise-menu active">15</a>
+      <a href="../16-list-of-numbers-b1-b2/list-of-numbers-b1-b2.html"
+         class="exercise-menu">16</a>
+      <a href="../17-selection-sort/selection-sort.html"
+         class="exercise-menu">17</a>
+    </div>
+
+    <a href="../16-list-of-numbers-b1-b2/list-of-numbers-b1-b2.html">
+      <i class="fas fa-chevron-right"></i>
+    </a>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 gx-sm-3 gy-3">
+      <div class="body-panel">
+        <h3><small>exercise - 15</small>lists & strings</h3>
+        <h6>Execute operations between two numbers in their digit list representation and return new list.</h6>
+
+        <form action="#"
+              onsubmit="printOperationBetweenLists();return false;">
+
+          <label for="number1"></label>
+          <input id="number1"
+                 type="number"
+                 placeholder="number - e.g.:236"
+                 required/>
+
+          <label for="number2"></label>
+          <input id="number2"
+                 type="number"
+                 placeholder="number - e.g.:632"
+                 required/>
+
+          <div class="button-wrapper">
+            <button>
+              Run
+            </button>
+
+            <button id="reset"
+                    onclick="resetLists(['number1', 'number2'])"
+                    disabled>
+              Reset
+            </button>
+          </div>
+        </form>
+
+        <div class="output">
+          <span id="output"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6 gx-sm-3 gy-3">
+      <div class="wrapper">
+        <ul class="nav nav-tabs"
+            id="myTab"
+            role="tablist">
+          <li class="nav-item"
+              role="presentation">
+            <button class="nav-link active"
+                    id="javascript-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#javascript"
+                    type="button"
+                    role="tab">JavaScript
+            </button>
+          </li>
+          <li class="nav-item"
+              role="presentation">
+            <button class="nav-link"
+                    id="html-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#html"
+                    type="button"
+                    role="tab">HTML
+            </button>
+          </li>
+          <li class="nav-item"
+              role="presentation">
+            <button class="nav-link"
+                    id="css-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#css"
+                    type="button"
+                    disabled
+                    role="tab">CSS
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content"
+             id="myTabContent">
+          <div class="tab-pane fade show active"
+               id="javascript">
+            <div class="body-panel tabs">
+              <pre><code class="language-javascript">3</code></pre>
+
+            </div>
+          </div>
+
+          <div class="tab-pane fade"
+               id="html">
+            <div class="body-panel tabs">
+              <pre><code class="language-html">&lt;!-- Use onsubmit property on the form tag followed by the action
+and return false, so that the submit button won't reload the page upon click--&gt;
+</code></pre>
+            </div>
+          </div>
+
+          <div class="tab-pane fade"
+               id="css">
+            <div class="body-panel tabs">css content</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="text-center text-lg-start">
+  <div class="text-center p-3">
+    © 2021 Copyright Lígia Santos
+  </div>
+</footer>
+
+<!-- LIBS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- GLOBAL -->
+<script src="/js/global.js"
+        type="application/javascript"></script>
+
+<!-- SPECIFIC -->
+<script src="operations-between-two-numbers-in-their-digit-list.js"
+        type="application/javascript"></script>
+
+</body>
+</html>

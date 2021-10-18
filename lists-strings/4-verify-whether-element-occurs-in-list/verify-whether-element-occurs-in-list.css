@@ -1,0 +1,169 @@
+
+#slide {
+  display: inline-block;
+  overflow: hidden;
+  animation: example .5s linear forwards;
+}
+
+@keyframes example {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/*Return true*/
+p#positive {
+  color: rgba(187, 222, 222, 0.91);
+  text-align: center;
+  animation-name: text-shadow;
+  text-shadow: 0 0 80px #cbb000, 0 0 30px #34AD82FF, 0 0 6px #4A9BDAFF;
+  padding: 12px 5px;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+#positive span:nth-child(1),
+#positive span:nth-child(2),
+#positive span:nth-child(3),
+#positive span:nth-child(4) {
+  animation: higher 10s linear;
+}
+
+
+
+@keyframes text-shadow {
+  0% {
+    text-shadow: none;
+  }
+  100% {
+    text-shadow: 0 0 80px #cbb000, 0 0 30px #34AD82FF, 0 0 6px #1c53dc;
+  }
+}
+
+
+p#positive,
+p#negative {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  font-family: 'Limelight', cursive;
+  font-size: 30px;
+}
+
+
+/*Return False*/
+p#negative {
+  color: #C26E4A;
+  text-align: center;
+  text-shadow: 0 0 80px #C26E4A, 0 0 30px FireBrick, 0 0 6px DarkRed;
+  animation: lower;
+  padding: 12px 5px;
+}
+
+#negative span:nth-of-type(2) {
+  text-shadow: none;
+  opacity: .5;
+}
+
+#negative span:nth-of-type(4) {
+  animation: lower 5s linear infinite;
+}
+
+#negative span:nth-of-type(5) {
+  animation: toggleOpacity 5s linear infinite;
+}
+
+
+@keyframes lower {
+  0%, 12%, 18.999%, 23%, 31.999%, 37%, 44.999%, 46%, 49.999%, 51%, 58.999%, 61%, 68.999%, 71%, 85.999%, 96%, 100% {
+    opacity: 0.99;
+    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
+  }
+  19%, 22.99%, 32%, 36.999%, 45%, 45.999%, 50%, 50.99%, 59%, 60.999%, 69%, 70.999%, 86%, 95.999% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+
+}
+
+@keyframes higher {
+  0%, 12%, 18.999%, 23%, 31.999%, 37%, 44.999%, 46%, 49.999%, 51%, 58.999%, 61%, 68.999%, 71%, 85.999%, 96%, 100% {
+    opacity: 0.99;
+    text-shadow: 0 0 80px #cbb000, 0 0 30px #4a9bda, 0 0 6px #34ad82;
+  }
+  19%, 22.99%, 32%, 36.999%, 45%, 45.999%, 50%, 50.99%, 59%, 60.999%, 69%, 70.999%, 86%, 95.999% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+}
+
+@keyframes toggleOpacity {
+  50% {
+    opacity: 1;
+  }
+  /* Turn off */
+  50.001% {
+    opacity: 0.4;
+  }
+
+  /* Keep off state for a short period */
+
+  52.999% {
+    opacity: 0.4;
+  }
+  /* Turn back on */
+  53% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 320px) {
+  p#positive,
+  p#negative {
+    font-size: 40px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 321px) {
+  p#positive,
+  p#negative {
+    font-size: 50px;
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  p#positive,
+  p#negative {
+    font-size: 50px;
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  p#positive,
+  p#negative {
+    font-size: 50px;
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  p#positive,
+  p#negative {
+    font-size: 75px;
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  p#positive,
+  p#negative {
+    font-size: 75px;
+    width: 65%;
+  }
+}

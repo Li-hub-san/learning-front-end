@@ -1,0 +1,25 @@
+/*JavaScript*/
+
+.container .row .body-panel pre code.hljs {
+  background-color: #355C7D;
+}
+
+/*keywords*/
+.hljs-built_in, .hljs-keyword, .hljs-literal, .hljs-selector-tag {
+  color: rgb(250, 137, 8);
+}
+
+/*properties*/
+span.hljs-property {
+  color: rgba(250, 135, 194, 0.7);
+}
+
+/*let i and index*/
+.hljs-number, .hljs-symbol {
+  color: rgb(150, 192, 210);
+}
+
+/*function name*/
+.hljs-attribute, .hljs-title, .hljs-type {
+  color: #fac254;
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <!-- FONTS -->
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap"
+        rel="stylesheet">
+
+  <!-- LIBS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/agate.min.css">
+  <link href="/css/all.min.css"
+        rel="stylesheet">
+
+  <!-- GLOBAL -->
+  <link rel="stylesheet"
+        href="/css/global.css">
+  <link rel="stylesheet"
+        href="/css/highlightjs.override.css">
+
+  <!-- SPECIFIC -->
+  <link rel=stylesheet
+        href="choose-sum-or-product.css">
+
+  <title>My Practice Page!</title>
+</head>
+<body>
+
+<div class="header">
+  <h1><a href="../../index.html">web<span>development</span></a></h1>
+</div>
+
+<div class="container">
+  <div class="elements">
+    <a href="../5-sum-when-multiples/sum-when-multiples.html"><i class="fas fa-chevron-left"></i>
+    </a>
+    <div class="middle">
+      <a href="../2-greet-user-by-name/greet-user-by-name.html"
+         class="exercise-menu">2</a>
+      <a href="../3-greet-if-bob-and-alice/greet-if-bob-and-alice.html"
+         class="exercise-menu">3</a>
+      <a href="../4-sum-1-to-n/sum-1-to-n.html"
+         class="exercise-menu">4</a>
+      <a href="../5-sum-when-multiples/sum-when-multiples.html"
+         class="exercise-menu">5</a>
+      <a href="choose-sum-or-product.html"
+         class="exercise-menu active">6</a>
+      <a href="../7-multiplication-table/multiplication-table.html"
+         class="exercise-menu">7</a>
+      <a href="../8-prime-numbers/prime-numbers.html"
+         class="exercise-menu">8</a>
+    </div>
+    <a href="../7-multiplication-table/multiplication-table.html"><i class="fas fa-chevron-right"></i></a>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 gx-sm-3 gy-3">
+      <div class="body-panel">
+        <h3>exercise 6<small>Elementary</small></h3>
+        <h6>the possibility to choose between computing the sum and computing the product of 1,…,n.</h6>
+        <form action="#"
+              onsubmit="printResult(); return false">
+
+            <label for="input-number">Number:</label>
+            <input id="input-number"
+                   type="number"
+                   placeholder="0"
+                   autocomplete="off"
+                   required/>
+
+
+            <label for="input-operator">Operator:</label>
+            <input id="input-operator"
+                   type="text"
+                   placeholder="× or +"
+                   autocomplete="off"
+                   required/>
+
+          <div class="button-wrapper">
+            <button type="submit"
+                    id="submit">
+              Run
+            </button>
+            <button id="reset"
+                    onclick="resetGroupButton()"
+                    disabled>
+              Reset
+            </button>
+
+          </div>
+        </form>
+
+        <div class="output">
+          <span id="output"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6 gx-sm-3 gy-3">
+      <div class="wrapper">
+        <ul class="nav nav-tabs"
+            id="myTab"
+            role="tablist">
+          <li class="nav-item"
+              role="presentation">
+            <button class="nav-link active"
+                    id="javascript-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#javascript"
+                    type="button"
+                    role="tab">JavaScript
+            </button>
+          </li>
+          <li class="nav-item"
+              role="presentation">
+            <button class="nav-link"
+                    id="html-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#html"
+                    type="button"
+                    role="tab">HTML
+            </button>
+          </li>
+          <li class="nav-item"
+              role="presentation">
+            <button class="nav-link"
+                    id="css-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#css"
+                    type="button"
+                    disabled
+                    role="tab">CSS
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content"
+             id="myTabContent">
+          <div class="tab-pane fade show active"
+               id="javascript">
+            <div class="body-panel tabs">
+              <pre><code class="language-javascript">3</code></pre>
+
+            </div>
+          </div>
+
+          <div class="tab-pane fade"
+               id="html">
+            <div class="body-panel tabs">
+              <pre><code class="language-html">&lt;!-- Use onsubmit property on the form tag followed by the action
+and return false, so that the submit button won't reload the page upon click--&gt;
+</code></pre>
+            </div>
+          </div>
+
+          <div class="tab-pane fade"
+               id="css">
+            <div class="body-panel tabs">css content</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-light text-center text-lg-start">
+  <div class="text-center p-3"
+       style="background-color: #C26E4A;">
+    © 2021 Copyright Lígia Santos
+  </div>
+</footer>
+
+<!-- LIBS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- GLOBAL -->
+<script src="/js/global.js"
+        type="application/javascript"></script>
+
+<!-- SPECIFIC -->
+<script src="choose-sum-or-product.js"
+        type="application/javascript"></script>
+
+</body>
+</html>

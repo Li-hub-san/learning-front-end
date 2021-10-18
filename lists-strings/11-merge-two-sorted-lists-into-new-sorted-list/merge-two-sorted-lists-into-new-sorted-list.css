@@ -1,0 +1,10 @@
+
+.container .row .body-panel input {
+  width: 215px;
+}
+
+.output-lists {
+  margin: 5px 0;
+  font-weight: bold;
+  color: #C26E4A;
+}

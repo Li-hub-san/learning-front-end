@@ -1,0 +1,42 @@
+
+.container .row {
+  margin-bottom: calc(24px + 1rem);
+}
+
+.container .row .body-panel{
+  height: 100%
+}
+
+.container .row .body-panel h3 {
+  text-align: center;
+  padding: 8px 12px;
+  color: #0B2E4B;
+}
+
+.container .row .body-panel ol {
+  text-align: left;
+  padding-left: 30px;
+  color: #0B2E4B;
+}
+
+.container .row .body-panel ol li {
+  padding-left: 2px;
+}
+
+.container .row .body-panel ol li:hover {
+  text-decoration: none;
+  background-color: #0B2E4B;
+}
+
+.container .row .body-panel ol li a {
+  display: block;
+  text-decoration: none;
+  color: #0B2E4B;
+  font-size: 15px;
+}
+
+.container .row .body-panel ol li a:hover {
+  color: white;
+}
+
+

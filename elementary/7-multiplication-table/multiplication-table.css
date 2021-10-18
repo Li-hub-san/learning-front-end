@@ -1,0 +1,11 @@
+
+.container .row .body-panel div#output-group {
+  margin: 30px 0 20px;
+}
+
+.container .row .body-panel div#output-group pre {
+  color: #355C7D;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}

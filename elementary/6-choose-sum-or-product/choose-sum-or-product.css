@@ -1,0 +1,17 @@
+
+.container .row .body-panel p.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.container .row .body-panel p.input-wrapper span {
+  width: 82px;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.container .row .body-panel .button-wrapper {
+  margin: 15px 0;
+}

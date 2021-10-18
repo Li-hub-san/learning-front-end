@@ -1,0 +1,69 @@
+
+span.animated {
+  color: white;
+  text-shadow: 2px -2px #0B2E4B;
+  margin-left: 2px;
+  margin-right: 2px ;
+  font-size: 30px;
+  border-radius: 2px;
+  padding: 2px 5px;
+  background-color: #f8b195;
+  border: 1px solid #C26E4A;
+  text-align: center;
+  animation-name: anime, toggleOpacity;
+  animation-duration: .1s;
+  position: relative;
+  animation-iteration-count: 1;
+  word-break: break-word;
+}
+
+@keyframes anime {
+  0% {
+    left: 150px
+  }
+  25% {
+    left: 100px
+  }
+  50% {
+    left: 90px
+  }
+  75% {
+    left: 75px
+  }
+  80% {
+    left: 60px
+  }
+  90% {
+    left: 50px
+  }
+  95% {
+    left: 25px
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes toggleOpacity {
+  0% {
+    opacity: 0;
+  }
+  0.01% {
+    opacity: .05;
+  }
+  0.02% {
+    opacity: .1;
+  }
+  20% {
+    opacity: .5;
+  }
+  30% {
+    opacity: .7;
+  }
+  60% {
+    opacity: 1;
+  }
+  75%, 100% {
+    opacity: 1;
+  }
+}

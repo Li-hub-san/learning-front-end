@@ -1,0 +1,25 @@
+.container .row .body-panel .output #output p {
+  height: max-content;
+  color: #0B2E4B;
+  animation-duration: 1000ms;
+  position: relative;
+  animation-name: dropDown;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dropDown {
+  from {
+    top: -25px;
+    opacity: 0
+  }
+  to {
+    top: 20px;
+    opacity: 1
+  }
+}
+
+.container .row .body-panel .output #output p.highlighted {
+  background-color: white;
+  color: #C26E4A;
+  animation: none;
+}
