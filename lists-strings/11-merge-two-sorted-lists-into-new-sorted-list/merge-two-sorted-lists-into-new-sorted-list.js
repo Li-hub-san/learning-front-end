@@ -7,8 +7,8 @@ function printSortedLists() {
   const inputList2El = getElement("list2");
   const outputMergedEl = getElement("output");
 
-  const inputArray1 = inputValueToArray(inputList1El.value);
-  const inputArray2 = inputValueToArray(inputList2El.value);
+  const inputArray1 = filterInputList(inputList1El.value);
+  const inputArray2 = filterInputList(inputList2El.value);
 
   inputArray1.sort(sortList);
   inputArray2.sort(sortList);
@@ -19,7 +19,6 @@ function printSortedLists() {
 
   const mergedLists = `<p>Merged and sorted list: <br>
     [ ${inputArray1.concat(inputArray2).sort(sortList).join(", ")} ]</p>`;
-
   outputMergedEl.innerHTML = sortedLists + mergedLists;
 
   enableEl("reset");
