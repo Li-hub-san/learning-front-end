@@ -9,7 +9,6 @@ body {
 }
 
 .header {
-  font-size: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,13 +16,26 @@ body {
   background-color: #355C7D;
 }
 
+
 .header h1,
 .header h1 a {
+  font-size: 2.5rem;
   font-weight: bolder;
   text-align: center;
   text-decoration-line: none;
   color: #FFCAB4;
   margin: 8px 0;
+}
+
+@media (max-width: 576px) {
+  .header {
+    height: 60px;
+  }
+
+  .header h1,
+  .header h1 a {
+    font-size: 2.3rem;
+  }
 }
 
 .header h1 a:hover,
@@ -160,7 +172,7 @@ body {
   flex-wrap: wrap;
 }
 
-label{
+label {
   font-size: 14px;
   font-weight: bold;
   text-align: left;
@@ -242,7 +254,7 @@ span.error {
   text-align: center;
 }
 
-#reset:disabled{
+#reset:disabled {
   border: 1px solid #c4c4c4;
 }
 
@@ -344,8 +356,8 @@ span.error {
 }
 
 .container .row .body-panel button:disabled,
-.container .row [class^='col-'] .nav-tabs .nav-item>button:disabled,
-.container .row [class^='col-'] .nav-tabs .nav-item>button:disabled:hover {
+.container .row [class^='col-'] .nav-tabs .nav-item > button:disabled,
+.container .row [class^='col-'] .nav-tabs .nav-item > button:disabled:hover {
   color: #c4c4c4;
   border: 1px solid #c4c4c4;
   border-bottom-color: #0B2E4B;
@@ -409,4 +421,15 @@ footer {
   text-align: center;
   color: white;
   background-color: #C26E4A;
+}
+
+@media (max-width: 576px) {
+  footer {
+    height: 25px;
+  }
+
+  .p-3 {
+    padding: .1rem!important;
+    font-size: 14px;
+  }
 }
