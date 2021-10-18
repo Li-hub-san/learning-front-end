@@ -1,10 +1,5 @@
-// 7. Write a JavaScript program where the program takes a random
-// integer between 1 to 10,
-// the user is then prompted to input a guess number.
-// If the user input matches with guess number, the program will display a message "Good Work"
-// otherwise display a message "Not matched".
+// 7. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched".
 
-// connection solution to DOM
 function executeRandom() {
   const inputNumberEl = document.getElementById("input");
   const resultEl = document.getElementById("output");
@@ -23,8 +18,8 @@ function executeRandom() {
 }
 
 /**
- * Receives a number, compares it with a generated random and returns true when they match.
- * @param n number
+ * Receives a number, compares it with a generated random and returns true when match.
+ * @param n {number} number
  * @returns {boolean} true if n matches randomly generated number.
  */
 function doesNumberMatchRandom(n) {

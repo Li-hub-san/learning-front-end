@@ -37,10 +37,8 @@ function printResult() {
   enableEl("reset");
 }
 
-// solution
 /**
- * The function receives two full years in the parameters and returns an array containing two arrays. Position [0]: years where January 1st is a Sunday;
- * position [1]: years that January 1st are not.
+ * Receives two full years and returns an array with the years that January 1st is a Sunday;
  * @param fromYear < to year
  * @param toYear > from year
  * @returns {*[][]}

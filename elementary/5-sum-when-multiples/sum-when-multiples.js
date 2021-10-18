@@ -6,7 +6,7 @@
  * @param n {number} Number
  * @returns {number} Number
  */
-function sumOnlyMultipleOfThreeAndFive(n) {
+function sumOnlyMultiplesOfThreeAndFive(n) {
   let sum = 0;
   for (let i = 1; i <= +n; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
@@ -20,6 +20,6 @@ function printResult() {
   const inputVal = +getElement("input").value;
   const outputEl = getElement("output");
 
-  outputEl.innerHTML = sumOnlyMultipleOfThreeAndFive(inputVal).toString();
+  outputEl.innerHTML = sumOnlyMultiplesOfThreeAndFive(inputVal).toString();
   enableEl("reset");
 }

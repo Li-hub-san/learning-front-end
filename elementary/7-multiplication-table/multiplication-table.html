@@ -23,6 +23,8 @@
         href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/agate.min.css">
   <link href="../../css/all.min.css"
         rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
   <!-- GLOBAL -->
   <link rel="stylesheet"
@@ -74,10 +76,12 @@
         <form action="#"
               onsubmit="multiplicationTable(); return false;">
 
-          <label for="input"></label>
+          <label for="input">Multiplier</label>
           <input id="input"
                  type="number"
                  placeholder="0"
+                 max="9999999999999"
+                 min="-9999999999999"
                  autocomplete="off"
                  required/>
 
@@ -88,14 +92,14 @@
             </button>
 
             <button id="reset"
-                    onclick="resetButton('reset','submit', 'input', 'output-group')"
+                    onclick="resetButton()"
                     disabled>
               Reset
             </button>
           </div>
         </form>
 
-        <div id='output-group'></div>
+        <div id='output'></div>
       </div>
     </div>
 
@@ -121,7 +125,8 @@
                     data-bs-toggle="tab"
                     data-bs-target="#html"
                     type="button"
-                    role="tab">HTML
+                    role="tab"
+                    disabled>HTML
             </button>
           </li>
           <li class="nav-item"
@@ -142,22 +147,48 @@
           <div class="tab-pane fade show active"
                id="javascript">
             <div class="body-panel tabs">
-              <pre><code class="language-javascript">3</code></pre>
+              <pre><code class="language-javascript">// 7. Write a program that prints a multiplication table for numbers up to 12.
+
+function multiplicationTable() {
+  const multiplierEl = +document.getElementById("input").value;
+  const divEl = document.getElementById("output");
+  divEl.innerHTML = "";
+
+  const maxValue = multiplierEl * 12;
+
+  for (let i = 0; i <= 12; i++) {
+    let result = i * multiplierEl;
+    let p = document.createElement("pre");
+    p.setAttribute("class", "new");
+    p.innerHTML =
+      multiplierEl +
+      " × " +
+      formatVariable(i, 2) +
+      " = " +
+      formatVariable(result, maxValue.toString().length);
+
+    divEl.appendChild(p);
+  }
+}
+
+function formatVariable(variable, caseCount) {
+  return variable.toString().padStart(caseCount, " ");
+}</code></pre>
             </div>
           </div>
 
           <div class="tab-pane fade"
                id="html">
             <div class="body-panel tabs">
-              <pre><code class="language-html">&lt;!-- Use onsubmit property on the form tag followed by the action
-and return false, so that the submit button won't reload the page upon click--&gt;
-</code></pre>
+              <pre><code class="language-html"></code></pre>
             </div>
           </div>
 
           <div class="tab-pane fade"
                id="css">
-            <div class="body-panel tabs">css content</div>
+            <div class="body-panel tabs">
+              <pre><code></code></pre>
+            </div>
           </div>
         </div>
       </div>

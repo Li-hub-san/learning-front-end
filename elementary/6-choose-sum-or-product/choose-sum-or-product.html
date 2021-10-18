@@ -23,6 +23,8 @@
         href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/agate.min.css">
   <link href="../../css/all.min.css"
         rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
   <!-- GLOBAL -->
   <link rel="stylesheet"
@@ -69,24 +71,24 @@
     <div class="col-xs-12 col-sm-12 col-md-6 gx-sm-3 gy-3">
       <div class="body-panel">
         <h3>exercise 6<small>Elementary</small></h3>
-        <h6>the possibility to choose between computing the sum and computing the product of 1,…,n.</h6>
+        <h6>Compute the sum or the product of 1 to n.</h6>
         <form action="#"
               onsubmit="printResult(); return false">
 
-            <label for="input-number">Number:</label>
-            <input id="input-number"
-                   type="number"
-                   placeholder="0"
-                   autocomplete="off"
-                   required/>
+          <label for="input-number">Number:</label>
+          <input id="input-number"
+                 type="number"
+                 placeholder="0"
+                 autocomplete="off"
+                 required/>
 
 
-            <label for="input-operator">Operator:</label>
-            <input id="input-operator"
-                   type="text"
-                   placeholder="× or +"
-                   autocomplete="off"
-                   required/>
+          <label for="input-operator">Operator:</label>
+          <input id="input-operator"
+                 type="text"
+                 placeholder="× or +"
+                 autocomplete="off"
+                 required/>
 
           <div class="button-wrapper">
             <button type="submit"
@@ -130,7 +132,8 @@
                     data-bs-toggle="tab"
                     data-bs-target="#html"
                     type="button"
-                    role="tab">HTML
+                    role="tab"
+                    disabled>HTML
             </button>
           </li>
           <li class="nav-item"
@@ -151,7 +154,67 @@
           <div class="tab-pane fade show active"
                id="javascript">
             <div class="body-panel tabs">
-              <pre><code class="language-javascript">3</code></pre>
+              <pre><code class="language-javascript">// 6. Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,…,n.
+
+function chooseEitherSumOrProductOf1ToN(number, operator) {
+  if (operator !== "+" && operator !== "*") {
+    throw "Invalid operator";
+  }
+
+  if (number === 0 || number === null) {
+    throw "Please submit a valid value.";
+  }
+
+  let total;
+
+  if (number < 0) {
+    total = whenNegativeNumbers(number, operator);
+  } else {
+    total = whenPositiveNumbers(number, operator);
+  }
+
+  let message = " of 1 to " + number + " is: " + total;
+
+  if (operator === "+") {
+    return "Sum" + message;
+  }
+
+  if (operator === "*") {
+    return "Product" + message;
+  }
+}
+
+function whenNegativeNumbers(number, operator) {
+  let total = 1;
+
+  for (let i = 0; i >= number; i--) {
+    total = returnTotal(total, operator, i);
+  }
+
+  return total;
+}
+
+function whenPositiveNumbers(number, operator) {
+  let total = 1;
+
+  for (let i = 2; i <= number; i++) {
+    total = returnTotal(total, operator, i);
+  }
+
+  return total;
+}
+
+function returnTotal(total, operator, i) {
+  if (operator === "+") {
+    total += i;
+  }
+
+  if (operator === "*") {
+    total *= i;
+  }
+
+  return total;
+}</code></pre>
 
             </div>
           </div>
@@ -159,15 +222,13 @@
           <div class="tab-pane fade"
                id="html">
             <div class="body-panel tabs">
-              <pre><code class="language-html">&lt;!-- Use onsubmit property on the form tag followed by the action
-and return false, so that the submit button won't reload the page upon click--&gt;
-</code></pre>
+              <pre><code class="language-html"></code></pre>
             </div>
           </div>
 
           <div class="tab-pane fade"
                id="css">
-            <div class="body-panel tabs">css content</div>
+            <div class="body-panel tabs"><pre><code></code></pre></div>
           </div>
 
         </div>

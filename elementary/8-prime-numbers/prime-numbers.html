@@ -71,12 +71,12 @@
     <div class="col-xs-12 col-sm-12 col-md-6 gx-sm-3 gy-3">
       <div class="body-panel">
         <h3>exercise 8<small>Elementary</small></h3>
-        <h6>Verify whether a number is prime.</h6>
+        <h6>Verify whether a number is a prime number.</h6>
 
         <form action="#"
               onsubmit="printResult(); return false">
 
-          <label for="input"></label>
+          <label for="input">Number</label>
           <input id="input"
                  type="number"
                  min="1"
@@ -125,7 +125,8 @@
                     data-bs-toggle="tab"
                     data-bs-target="#html"
                     type="button"
-                    role="tab">HTML
+                    role="tab"
+                    disabled>HTML
             </button>
           </li>
           <li class="nav-item"
@@ -146,22 +147,28 @@
           <div class="tab-pane fade show active"
                id="javascript">
             <div class="body-panel tabs">
-              <pre><code class="language-javascript">3</code></pre>
+              <pre><code class="language-javascript">// 8. Write a program that verifies if any number is a prime number.
+
+function verifyIfPrime(number) {
+  for (let i = 2, s = Math.sqrt(+number); i <= s; i++)
+    if (number % i === 0) return "Not a prime number";
+  if (number > 1) {
+    return "Prime";
+  }
+}</code></pre>
             </div>
           </div>
 
           <div class="tab-pane fade"
                id="html">
             <div class="body-panel tabs">
-              <pre><code class="language-html">&lt;!-- Use onsubmit property on the form tag followed by the action
-and return false, so that the submit button won't reload the page upon click--&gt;
-</code></pre>
+              <pre><code class="language-html"></code></pre>
             </div>
           </div>
 
           <div class="tab-pane fade"
                id="css">
-            <div class="body-panel tabs">css content</div>
+            <div class="body-panel tabs"></div>
           </div>
         </div>
       </div>

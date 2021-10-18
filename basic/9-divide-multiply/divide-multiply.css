@@ -1,12 +1,4 @@
 
-.container .row .body-panel .input-wrapper {
-  display: block;
-  justify-content: center;
-  /*width: 250px;*/
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .container .row .body-panel .input-wrapper #input1,
 .container .row .body-panel .input-wrapper #input2,
 .container .row .body-panel .input-wrapper #operator {
@@ -14,10 +6,6 @@
   margin: 1px 4px 10px;
 }
 
-.container .row .body-panel .input-wrapper #operator {
-  text-align: center;
-}
-
-.error {
-  color: #C26E4A;
+.container .row .body-panel .output {
+  word-break: break-word;
 }

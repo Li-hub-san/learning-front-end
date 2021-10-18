@@ -1,43 +1,5 @@
 // Javascript basic
 // 3. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 4, 5, 6.
-// Heron's formula using for loop:
-//
-// function calculateAreaOfTriangle(side1, side2, side3) {
-//   const triangleSideList = [side1, side2, side3];
-//   const semiPerimeter = (side1 + side2 + side3) / 2;
-//
-//   let prodOfSubTsFromSp = 1;
-//   for (let i = 0; i < triangleSideList.length; i++) {
-//     const triangleSide = triangleSideList[i];
-//     const subTsFromSp = semiPerimeter - triangleSide;
-//     prodOfSubTsFromSp *= subTsFromSp;
-//   }
-//
-//   return Math.sqrt(semiPerimeter * prodOfSubTsFromSp);
-// }
-//
-// console.log(
-//   "Triangle area calculated with for loop =",
-//   calculateAreaOfTriangle(3, 6, 7)
-// );
-//
-// // Done with a forEach instead of a for loop:
-// function tA(s1, s2, s3) {
-//   const triangleSideList = [s1, s2, s3];
-//   const semiPerimeter = (s1 + s2 + s3) / 2;
-//
-//   let prodOfSubTsFromSp = 1;
-//   triangleSideList.forEach(function (triangleSide) {
-//     const subTsFromSp = semiPerimeter - triangleSide;
-//     prodOfSubTsFromSp *= subTsFromSp;
-//   });
-//
-//   return Math.sqrt(semiPerimeter * prodOfSubTsFromSp);
-// }
-//
-// console.log(tA(3, 6, 7));
-
-// Solution using Heron's formula:
 
 /**
  * Returns the area of any triangle using Heron's formula.

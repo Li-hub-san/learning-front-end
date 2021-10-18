@@ -95,8 +95,8 @@
                  id="input2"
                  autocomplete="off"
                  placeholder="e.g.: 2050"
-                 min="1950"
-                 max="3000"
+                 min="1900"
+                 max="2500"
                  required>
 
           <div class="button-wrapper">
@@ -140,7 +140,8 @@
                     data-bs-toggle="tab"
                     data-bs-target="#html"
                     type="button"
-                    role="tab">HTML
+                    role="tab"
+                    disabled>HTML
             </button>
           </li>
           <li class="nav-item"
@@ -161,8 +162,27 @@
           <div class="tab-pane fade show active"
                id="javascript">
             <div class="body-panel tabs">
-              <pre><code class="language-javascript">// 6. Write a JavaScript program to find 1st January is being a Sunday
-//between 2014 and 2050.
+              <pre><code class="language-javascript">// 6. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.
+/**
+ * Receives two full years and returns an array with the years that January 1st is a Sunday;
+ * @param fromYear < to year
+ * @param toYear > from year
+ * @returns {*[][]}
+ */
+function getYearsWithConditionOnJanuary1st(fromYear, toYear) {
+  if (fromYear > toYear) {
+    throw "From year > To year";
+  }
+
+  const outputList = [];
+
+  for (let i = fromYear; i <= toYear; i++) {
+    if (isJanuary1StSunday(i)) {
+      outputList.push(i);
+    }
+  }
+  return outputList;
+}
 
 /**
  * Verifies if January the 1st is a Sunday.
@@ -173,32 +193,7 @@ function isJanuary1StSunday(year) {
   const date = new Date(year + "-01-01");
   return date.getDay() === 0;
 }
-
-/**
- * The function receives two full years in the parameters and returns an array containing two arrays.
- * Position [0]: years where January 1st is a Sunday;
- * Position [1]: years that January 1st are not.
- * @param fromYear < to year
- * @param toYear > from year
- * @returns {*[][]}
- */
-function getYearsWithConditionOnJanuary1st(fromYear, toYear) {
-  if (fromYear > toYear) {
-    throw "Initial year > Final year";
-  }
-
-  const isSunday = [];
-  const notSunday = [];
-  const outputList = [isSunday, notSunday];
-  for (let i = fromYear; i <= toYear; i++) {
-    if (isJanuary1StSunday(i)) {
-      isSunday.push(i);
-    } else {
-      notSunday.push(i);
-    }
-  }
-  return outputList;
-}</code></pre>
+</code></pre>
             </div>
           </div>
 

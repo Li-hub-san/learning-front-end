@@ -1,5 +1,5 @@
 // Elementary
-// 6. Write a program that prints a multiplication table for numbers up to 12.
+// 7. Write a program that prints a multiplication table for numbers up to 12.
 
 // function multiplyTable(multiplier) {
 //   // console.log("Multiplication table up to 12. Multiplier: " + multiplier);
@@ -19,7 +19,7 @@
 
 function multiplicationTable() {
   const multiplierEl = +document.getElementById("input").value;
-  const divEl = document.getElementById("output-group");
+  const divEl = document.getElementById("output");
   divEl.innerHTML = "";
 
   const maxValue = multiplierEl * 12;

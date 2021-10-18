@@ -40,8 +40,7 @@ function printResult() {
         outputEl.appendChild(span);
       }, (1000 * (i + 1)) / 10);
     }
-    outputEl.innerHTML = `<p>Longest word:</p>
-    <p class="highlighted">Length: ${result.length}</p>`;
+    outputEl.innerHTML = `<p>Longest word.<span class="highlighted">Length : ${result.length}</span></p>`;
   } catch (exception) {
     handleException(exception);
   }

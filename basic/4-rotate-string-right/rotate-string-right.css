@@ -1,8 +1,9 @@
-.output #output {
+.container .row .body-panel .output pre {
   text-align: center;
   font-size: 30px;
   color: #355C7D;
 }
+
 .container .row .body-panel .button-wrapper {
   display: block;
   margin-top: 12px;

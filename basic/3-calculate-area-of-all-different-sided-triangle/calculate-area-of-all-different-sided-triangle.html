@@ -165,9 +165,7 @@
           <div class="tab-pane fade show active"
                id="javascript">
             <div class="body-panel tabs">
-              <pre><code class="language-javascript">// Javascript basic
-// 3. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 4, 5, 6.
-
+              <pre><code class="language-javascript">// 3. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 4, 5, 6.
 /**
  * Returns the area of any triangle using Heron's formula.
  * @param s1 side 1
@@ -180,7 +178,7 @@ function calculateTriangleArea(s1, s2, s3) {
   const sp = (s1 + s2 + s3) / 2;
 
   if (s1 >= s2 + s3 || s2 >= s1 + s3 || s3 >= s1 + s2) {
-    throw "One of the sides cannot be equal or longer than the sum of the other two.";
+    throw "One side >= sum of two sides";
   }
 
   return Math.sqrt(sp * (sp - s1) * (sp - s2) * (sp - s3));

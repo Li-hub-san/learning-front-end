@@ -39,10 +39,6 @@ function displayCurrentDayAndTime() {
   return output;
 }
 
-// console.log(displayCurrentDayAndTime());
-// console.log(displayCurrentDayAndTime().join("\n"));
-
-// connecting solution to DOM
 function printResult() {
   const outputEl = getElement("output");
 
