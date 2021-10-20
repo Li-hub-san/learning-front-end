@@ -79,25 +79,26 @@
         <form action="#"
               onsubmit="printOperationBetweenLists();return false;">
 
-          <label for="number1"></label>
+          <label for="number1">Number</label>
           <input id="number1"
                  type="number"
-                 placeholder="number - e.g.:236"
+                 placeholder="e.g.:236"
                  required/>
 
-          <label for="number2"></label>
+          <label for="number2">Number</label>
           <input id="number2"
                  type="number"
-                 placeholder="number - e.g.:632"
+                 placeholder="e.g.:632"
                  required/>
 
           <div class="button-wrapper">
-            <button>
+            <button id="submit"
+                    type="submit">
               Run
             </button>
 
             <button id="reset"
-                    onclick="resetLists(['number1', 'number2'])"
+                    onclick="resetButton(['number1', 'number2'])"
                     disabled>
               Reset
             </button>
@@ -132,7 +133,8 @@
                     data-bs-toggle="tab"
                     data-bs-target="#html"
                     type="button"
-                    role="tab">HTML
+                    role="tab"
+                    disabled>HTML
             </button>
           </li>
           <li class="nav-item"
@@ -153,7 +155,7 @@
           <div class="tab-pane fade show active"
                id="javascript">
             <div class="body-panel tabs">
-              <pre><code class="language-javascript">3</code></pre>
+              <pre><code class="language-javascript"></code></pre>
 
             </div>
           </div>
@@ -161,9 +163,7 @@
           <div class="tab-pane fade"
                id="html">
             <div class="body-panel tabs">
-              <pre><code class="language-html">&lt;!-- Use onsubmit property on the form tag followed by the action
-and return false, so that the submit button won't reload the page upon click--&gt;
-</code></pre>
+              <pre><code class="language-html"></code></pre>
             </div>
           </div>
 

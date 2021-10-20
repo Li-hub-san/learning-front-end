@@ -6,10 +6,13 @@
 
 function verifyIfPrime(number) {
   for (let i = 2, s = Math.sqrt(+number); i <= s; i++)
-    if (number % i === 0) return "Not a prime number";
+    if (number % i === 0) {
+      return "Not a prime number";
+    }
   if (number > 1) {
     return "Prime";
   }
+  return "Not a prime number";
 }
 
 function printResult() {

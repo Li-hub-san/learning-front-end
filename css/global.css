@@ -240,6 +240,7 @@ form {
   color: #355C7D;
   margin-bottom: 15px;
   padding: 8px 30px;
+  word-break: break-word;
 }
 
 span.error {
