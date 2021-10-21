@@ -28,20 +28,23 @@ function inputValueToArray(inputVal) {
   return inputVal.replaceAll(", ", ",").split(/[, ]/);
 }
 
-function filterInputList(list) {
-  return list
-    .replace(/[^\s0-9A-Za-z]/g, "")
+function stringToArray(string) {
+  return string
     .replace(/\s+/g, ",")
     .split(",")
     .filter((s) => s !== "");
 }
 
-function filterWordList(wordList) {
-  return wordList
-    .replace(/[^\sA-Za-z]/g, "")
-    .replace(/\s+/g, ",")
-    .split(",")
-    .filter((s) => s !== "");
+function inputListToNumbers(numbersString) {
+  return stringToArray(numbersString.replace(/[^\s0-9,]/g, "")).map((s) => +s);
+}
+
+function inputListToStrings(string) {
+  return stringToArray(string.replace(/[^\s0-9A-Za-z,]/g, ""));
+}
+
+function inputListToWords(wordsString) {
+  return stringToArray(wordsString.replace(/[^\sA-Za-z,]/g, ""));
 }
 
 function resetButton(
@@ -81,3 +84,11 @@ function handleException(exception, outputId = "output", errorClass = "error") {
   outputEl.innerHTML = `<i class="bi bi-exclamation-triangle-fill"></i> <span>${exception}</span>`;
   outputEl.classList.add(errorClass);
 }
+
+let array = [1, 2, 3];
+console.log(
+  array
+    .toString()
+    .replace(/,/g, "0")
+    .replace(/[^\sA-Za-z]/g, "")
+);

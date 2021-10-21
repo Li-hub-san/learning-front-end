@@ -3,7 +3,7 @@
 function printResult() {
   let listVal = getElement("input").value;
   const outputEl = getElement("output");
-  const array = filterInputNumbersToArray(listVal);
+  const array = inputListToNumbers(listVal);
 
   outputEl.classList.remove("error");
   try {
@@ -20,14 +20,6 @@ function printResult() {
   enableEl("reset");
 }
 
-function filterInputNumbersToArray(numberList) {
-  return numberList
-    .replace(/[^0-9\s-]+/g, "")
-    .split(" ")
-    .filter((n) => n !== "" && !isNaN(n))
-    .map((el) => +el);
-}
-
 /**
  * Receives a list of numbers and returns the largest number of the list.
  * @param {number[]} list numbers
@@ -35,7 +27,7 @@ function filterInputNumbersToArray(numberList) {
  */
 function getLargestNumber(list) {
   if (list.length === 0) {
-    throw "Empty list";
+    throw "Input a number list";
   }
 
   let largestNumber = list[0];

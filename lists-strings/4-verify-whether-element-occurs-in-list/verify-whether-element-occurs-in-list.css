@@ -1,19 +1,4 @@
 
-#slide {
-  display: inline-block;
-  overflow: hidden;
-  animation: example .5s linear forwards;
-}
-
-@keyframes example {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
 /*Return true*/
 p#positive {
   color: rgba(187, 222, 222, 0.91);
@@ -29,10 +14,8 @@ p#positive {
 #positive span:nth-child(2),
 #positive span:nth-child(3),
 #positive span:nth-child(4) {
-  animation: higher 10s linear;
+  animation: lightsOn 10s linear;
 }
-
-
 
 @keyframes text-shadow {
   0% {
@@ -43,7 +26,6 @@ p#positive {
   }
 }
 
-
 p#positive,
 p#negative {
   margin-left: auto;
@@ -53,6 +35,36 @@ p#negative {
   font-size: 30px;
 }
 
+@keyframes lightsOn {
+  0%, 12%, 18.999%, 23%, 31.999%, 37%, 44.999%, 46%, 49.999%, 51%, 58.999%, 61%, 68.999%, 71%, 85.999%, 96%, 100% {
+    opacity: 0.99;
+    text-shadow: 0 0 80px #cbb000, 0 0 30px #4a9bda, 0 0 6px #34ad82;
+  }
+  19%, 22.99%, 32%, 36.999%, 45%, 45.999%, 50%, 50.99%, 59%, 60.999%, 69%, 70.999%, 86%, 95.999% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+}
+
+@keyframes toggleOpacity {
+  50% {
+    opacity: 1;
+  }
+  /* Turn off */
+  50.001% {
+    opacity: 0.4;
+  }
+
+  /* Keep off state for a short period */
+
+  52.999% {
+    opacity: 0.4;
+  }
+  /* Turn back on */
+  53% {
+    opacity: 1;
+  }
+}
 
 /*Return False*/
 p#negative {
@@ -85,38 +97,6 @@ p#negative {
   19%, 22.99%, 32%, 36.999%, 45%, 45.999%, 50%, 50.99%, 59%, 60.999%, 69%, 70.999%, 86%, 95.999% {
     opacity: 0.5;
     text-shadow: none;
-  }
-
-}
-
-@keyframes higher {
-  0%, 12%, 18.999%, 23%, 31.999%, 37%, 44.999%, 46%, 49.999%, 51%, 58.999%, 61%, 68.999%, 71%, 85.999%, 96%, 100% {
-    opacity: 0.99;
-    text-shadow: 0 0 80px #cbb000, 0 0 30px #4a9bda, 0 0 6px #34ad82;
-  }
-  19%, 22.99%, 32%, 36.999%, 45%, 45.999%, 50%, 50.99%, 59%, 60.999%, 69%, 70.999%, 86%, 95.999% {
-    opacity: 0.5;
-    text-shadow: none;
-  }
-}
-
-@keyframes toggleOpacity {
-  50% {
-    opacity: 1;
-  }
-  /* Turn off */
-  50.001% {
-    opacity: 0.4;
-  }
-
-  /* Keep off state for a short period */
-
-  52.999% {
-    opacity: 0.4;
-  }
-  /* Turn back on */
-  53% {
-    opacity: 1;
   }
 }
 

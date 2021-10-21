@@ -132,6 +132,7 @@ body {
   border: 1px solid #0B2E4B;
   height: 100%;
   padding: 8px 12px;
+  position: relative;
 }
 
 .container .row .body-panel h3 {
@@ -239,9 +240,12 @@ form {
   text-align: center;
   color: #355C7D;
   margin-bottom: 15px;
-  padding: 8px 30px;
+  padding: 8px 12px;
   word-break: break-word;
 }
+
+
+
 
 span.error {
   color: #c03f02;
@@ -262,8 +266,9 @@ span.error {
 /* +info */
 
 #info-wrapper {
-  margin-bottom: 0;
-
+ text-align: left;
+  position: absolute;
+  bottom: 5px;
 }
 
 #info {
@@ -273,7 +278,6 @@ span.error {
   font-weight: bold;
   border: 0;
   height: 100%;
-  width: 100%;
   text-align: left;
   padding: 0 5px;
   margin: 0 0 0 -5px;
@@ -353,7 +357,13 @@ span.error {
   background-color: #355C7D;
   border: 1px solid #0B2E4B;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+@media (max-width: 767px) {
+  .container .row [class^='col-'] .nav-tabs .nav-item button {
+    padding: 2px 2px;
+  }
 }
 
 .container .row .body-panel button:disabled,

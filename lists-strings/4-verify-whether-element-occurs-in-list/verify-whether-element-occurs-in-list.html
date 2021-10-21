@@ -86,7 +86,7 @@
         <h6>I lave a list.
           <br>My list has long and short words.
           <br>
-          <br>Can you figure out some words that are part of it?</h6>
+          <br>Can you figure any word that is on my list?</h6>
 
         <form action="#"
               onsubmit="printResult();return false;">
@@ -138,7 +138,8 @@
                     data-bs-toggle="tab"
                     data-bs-target="#html"
                     type="button"
-                    role="tab">HTML
+                    role="tab"
+                    disabled>HTML
             </button>
           </li>
           <li class="nav-item"
@@ -148,7 +149,6 @@
                     data-bs-toggle="tab"
                     data-bs-target="#css"
                     type="button"
-                    disabled
                     role="tab">CSS
             </button>
           </li>
@@ -182,15 +182,110 @@ function listHasElement(list, element) {
           <div class="tab-pane fade"
                id="html">
             <div class="body-panel tabs">
-              <pre><code class="language-html">&lt;!-- Use onsubmit property on the form tag followed by the action
-and return false, so that the submit button won't reload the page upon click--&gt;
-</code></pre>
+              <pre><code class="language-html"></code></pre>
             </div>
           </div>
 
           <div class="tab-pane fade"
                id="css">
-            <div class="body-panel tabs">css content</div>
+            <div class="body-panel tabs"><pre><code class="CSS">/*Return true*/
+p#positive {
+  color: rgba(187, 222, 222, 0.91);
+  text-align: center;
+  animation-name: text-shadow;
+  text-shadow: 0 0 80px #cbb000, 0 0 30px #34AD82FF, 0 0 6px #4A9BDAFF;
+  padding: 12px 5px;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+#positive span:nth-child(1),
+#positive span:nth-child(2),
+#positive span:nth-child(3),
+#positive span:nth-child(4) {
+  animation: lightsOn 10s linear;
+}
+
+@keyframes text-shadow {
+  0% {
+    text-shadow: none;
+  }
+  100% {
+    text-shadow: 0 0 80px #cbb000, 0 0 30px #34AD82FF, 0 0 6px #1c53dc;
+  }
+}
+
+p#positive,
+p#negative {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  font-family: 'Limelight', cursive;
+  font-size: 30px;
+}
+
+@keyframes lightsOn {
+  0%, 12%, 18.999%, 23%, 31.999%, 37%, 44.999%, 46%, 49.999%, 51%, 58.999%, 61%, 68.999%, 71%, 85.999%, 96%, 100% {
+    opacity: 0.99;
+    text-shadow: 0 0 80px #cbb000, 0 0 30px #4a9bda, 0 0 6px #34ad82;
+  }
+  19%, 22.99%, 32%, 36.999%, 45%, 45.999%, 50%, 50.99%, 59%, 60.999%, 69%, 70.999%, 86%, 95.999% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+}
+
+@keyframes toggleOpacity {
+  50% {
+    opacity: 1;
+  }
+/* Turn off */
+  50.001% {
+    opacity: 0.4;
+  }
+/* Keep off state for a short period */
+  52.999% {
+    opacity: 0.4;
+  }
+/* Turn back on */
+  53% {
+     opacity: 1;
+  }
+}
+
+/*Return False*/
+p#negative {
+  color: #C26E4A;
+  text-align: center;
+  text-shadow: 0 0 80px #C26E4A, 0 0 30px FireBrick, 0 0 6px DarkRed;
+  animation: lower;
+  padding: 12px 5px;
+}
+
+  #negative span:nth-of-type(2) {
+  text-shadow: none;
+  opacity: .5;
+  }
+
+  #negative span:nth-of-type(4) {
+  animation: lower 5s linear infinite;
+  }
+
+  #negative span:nth-of-type(5) {
+  animation: toggleOpacity 5s linear infinite;
+  }
+
+
+@keyframes lower {
+  0%, 12%, 18.999%, 23%, 31.999%, 37%, 44.999%, 46%, 49.999%, 51%, 58.999%, 61%, 68.999%, 71%, 85.999%, 96%, 100% {
+    opacity: 0.99;
+    text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
+  }
+  19%, 22.99%, 32%, 36.999%, 45%, 45.999%, 50%, 50.99%, 59%, 60.999%, 69%, 70.999%, 86%, 95.999% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+}</code></pre></div>
           </div>
 
         </div>

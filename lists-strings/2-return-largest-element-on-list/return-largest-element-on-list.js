@@ -25,7 +25,7 @@ function printResult() {
   const inputVal = getElement("input").value;
   const outputEl = getElement("output");
 
-  const refactoredInputEl = filterWordList(inputVal);
+  const refactoredInputEl = inputListToWords(inputVal);
 
   try {
     let result = getLargestWord(refactoredInputEl);

@@ -7,8 +7,8 @@ function printSortedLists() {
   const inputList2El = getElement("list2");
   const outputMergedEl = getElement("output");
 
-  const inputArray1 = filterInputList(inputList1El.value);
-  const inputArray2 = filterInputList(inputList2El.value);
+  const inputArray1 = inputListToStrings(inputList1El.value);
+  const inputArray2 = inputListToStrings(inputList2El.value);
 
   inputArray1.sort(sortList);
   inputArray2.sort(sortList);

@@ -15,10 +15,10 @@ function concatenateAndPrintTwoLists() {
   const outputMessage = "Your concatenated list: " + "<br>";
 
   const inputVal1 = getElement("list1").value;
-  const inputArr1 = filterInputList(inputVal1);
+  const inputArr1 = inputListToStrings(inputVal1);
 
   const inputVal2 = getElement("list2").value;
-  const inputArr2 = filterInputList(inputVal2);
+  const inputArr2 = inputListToStrings(inputVal2);
 
   outputEl.classList.remove("error");
 

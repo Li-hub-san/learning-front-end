@@ -20,8 +20,8 @@ function printAlternatedList() {
   const inputList2Val = getElement("list2").value;
   const outputEl = getElement("output");
 
-  const inputArr1 = filterInputList(inputList1Val);
-  const inputArr2 = filterInputList(inputList2Val);
+  const inputArr1 = inputListToStrings(inputList1Val);
+  const inputArr2 = inputListToStrings(inputList2Val);
 
   const result = alternatingElementsBetweenTwoLists(inputArr1, inputArr2);
   outputEl.innerHTML = "[ " + result.join(", ") + " ]";

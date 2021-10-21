@@ -6,7 +6,7 @@ function returnElementsOnOddPositions(list) {
     throw "Empty list";
   }
   if (list.length < 2) {
-    throw "List contains < 2 elements";
+    throw "List must contain at least 2 elements";
   }
 
   let oddNumbersList = [];
@@ -23,17 +23,18 @@ function printResult() {
   const outputEl = getElement("output");
   const infoWrapperEl = getElement("info-wrapper");
 
-  const inputList = filterInputList(inputVal);
+  const outputListEl = getElement("user-list");
+  const inputList = inputListToStrings(inputVal);
 
-  // const outputListEl = getElement("user-list");
-
-  // outputListEl.innerHTML =
-  //   "Your element list : " + "<br>" + "[ " + inputEl.join(", ") + " ]";
-
+  outputEl.classList.remove("error");
   try {
+    outputListEl.innerHTML = `
+      <span>Your list :<br> [&nbsp;${inputList.join(", ")}&nbsp;]`;
     outputEl.innerHTML =
       `<span>Elements on odd positions :</span>` +
-      `<p>[ ${returnElementsOnOddPositions(inputList).join(", ")} ]</p>`;
+      `<p>[&nbsp;${returnElementsOnOddPositions(inputList).join(
+        ", "
+      )}&nbsp;]</p>`;
   } catch (exception) {
     handleException(exception);
   }

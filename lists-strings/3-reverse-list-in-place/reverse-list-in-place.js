@@ -30,7 +30,7 @@ function printResult() {
   const inputListVal = getElement("input").value;
   const outputEl = getElement("output");
 
-  const clearedInputVal = filterInputList(inputListVal);
+  const clearedInputVal = inputListToStrings(inputListVal);
   outputEl.classList.remove("error");
 
   let word = "list";

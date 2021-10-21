@@ -19,9 +19,15 @@ const secretList = [
 function listHasElement(list, element) {
   const lowerCaseEl = element.toLowerCase();
 
-  if (filterWordList(element).length === 0) {
-    throw "Empty";
+  if (inputListToWords(element).length === 0) {
+    throw "Input any word";
   }
+
+  console.log(element, element.split(" ").length);
+  if (element.split(" ").length > 1) {
+    throw "Try one word at a time";
+  }
+
   for (let i = 0; i < list.length; i++) {
     if (list[i] === lowerCaseEl) {
       return true;
@@ -31,11 +37,12 @@ function listHasElement(list, element) {
 }
 
 function printResult() {
-  const inputEl = getElement("input").value;
+  const inputVal = getElement("input").value;
+  console.log(inputVal);
   const outputEl = getElement("output");
 
   try {
-    const result = listHasElement(secretList, inputEl);
+    const result = listHasElement(secretList, inputVal);
 
     if (result) {
       outputEl.innerHTML = `<p id="positive">
@@ -53,8 +60,8 @@ function printResult() {
         <span>E</span>
       </p>`;
     }
-    if (inputEl.toLowerCase() === "words") {
-      outputEl.innerHTML = `<p id="slide">Did you really think it was going to be that easy?</p>`;
+    if (inputVal.toLowerCase() === "words") {
+      outputEl.innerHTML = `<p>Did you really think it was going to be that easy?</p>`;
     }
   } catch (exception) {
     handleException(exception);
