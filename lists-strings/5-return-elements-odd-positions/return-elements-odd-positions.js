@@ -2,9 +2,6 @@
 // 5.Write a function that returns the elements on odd positions in a list.
 
 function returnElementsOnOddPositions(list) {
-  if (list.length === 0) {
-    throw "Empty list";
-  }
   if (list.length < 2) {
     throw "List must contain at least 2 elements";
   }
@@ -23,18 +20,19 @@ function printResult() {
   const outputEl = getElement("output");
   const infoWrapperEl = getElement("info-wrapper");
 
-  const outputListEl = getElement("user-list");
   const inputList = inputListToStrings(inputVal);
 
+  const formattedOutputLists = buildHighlightedListOutput("", inputList);
+  const message = `<span>Elements on odd positions :</span><br>`;
+
   outputEl.classList.remove("error");
+
   try {
-    outputListEl.innerHTML = `
-      <span>Your list :<br> [&nbsp;${inputList.join(", ")}&nbsp;]`;
-    outputEl.innerHTML =
-      `<span>Elements on odd positions :</span>` +
-      `<p>[&nbsp;${returnElementsOnOddPositions(inputList).join(
-        ", "
-      )}&nbsp;]</p>`;
+    validateEmptyList(inputList);
+    const output = returnElementsOnOddPositions(inputList);
+    const formattedOutput = formatListToOutput(output, ", ");
+
+    outputEl.innerHTML = formattedOutputLists + message + formattedOutput;
   } catch (exception) {
     handleException(exception);
   }

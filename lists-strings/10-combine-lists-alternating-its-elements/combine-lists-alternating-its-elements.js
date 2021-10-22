@@ -1,7 +1,9 @@
 // Lists, Strings
-// 11.Write a function that combines two lists by alternating taking elements, e.g. [a,b,c],
+// 10.Write a function that combines two lists by alternating taking elements, e.g. [a,b,c],[1,2,3] becomes [a,1,b,2,c,3]
 
 function alternatingElementsBetweenTwoLists(list1, list2) {
+  validateEmptyList(list1, list2);
+
   let result = [];
   while (list1.length > 0 || list2.length > 0) {
     if (list1.length > 0) {
@@ -23,7 +25,20 @@ function printAlternatedList() {
   const inputArr1 = inputListToStrings(inputList1Val);
   const inputArr2 = inputListToStrings(inputList2Val);
 
-  const result = alternatingElementsBetweenTwoLists(inputArr1, inputArr2);
-  outputEl.innerHTML = "[ " + result.join(", ") + " ]";
+  const listOutput =
+    buildHighlightedListOutput(1, inputArr1) +
+    buildHighlightedListOutput(2, inputArr2);
+  outputEl.classList.remove("error");
+
+  try {
+    const result = alternatingElementsBetweenTwoLists(inputArr1, inputArr2);
+
+    outputEl.innerHTML =
+      listOutput +
+      `<span>New alternated list:</span><br>` +
+      formatListToOutput(result, ", ");
+  } catch (exception) {
+    handleException(exception);
+  }
   enableEl("reset");
 }

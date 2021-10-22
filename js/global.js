@@ -24,10 +24,6 @@ function printFunction(inputElId, outputElId, callback) {
   }
 }
 
-function inputValueToArray(inputVal) {
-  return inputVal.replaceAll(", ", ",").split(/[, ]/);
-}
-
 function stringToArray(string) {
   return string
     .replace(/\s+/g, ",")
@@ -85,10 +81,22 @@ function handleException(exception, outputId = "output", errorClass = "error") {
   outputEl.classList.add(errorClass);
 }
 
-let array = [1, 2, 3];
-console.log(
-  array
-    .toString()
-    .replace(/,/g, "0")
-    .replace(/[^\sA-Za-z]/g, "")
-);
+function buildHighlightedListOutput(listNumber, inputArr) {
+  let formattedList = formatListToOutput(inputArr, ", ");
+  return `<p class="highlighted">List ${listNumber}: ${formattedList}</p>`;
+}
+
+function formatListToOutput(
+  array,
+  between = "&nbsp;]<br>[&nbsp;",
+  prefix = "[&nbsp;",
+  suffix = "&nbsp;]"
+) {
+  return prefix + array.join(between) + suffix;
+}
+
+function validateEmptyList(list1 = "list1", list2 = "list2") {
+  if (list1.length === 0 || list2.length === 0) {
+    throw "Empty list(s) or invalid characters";
+  }
+}

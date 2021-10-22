@@ -38,20 +38,27 @@ function listHasElement(list, element) {
 
 function printResult() {
   const inputVal = getElement("input").value;
-  console.log(inputVal);
   const outputEl = getElement("output");
+
+  const message = `<span>[ ${inputVal} ] is </span>`;
 
   try {
     const result = listHasElement(secretList, inputVal);
 
     if (result) {
-      outputEl.innerHTML = `<p id="positive">
+      outputEl.innerHTML =
+        message +
+        "in my list" +
+        `<p id="positive">
         <span>T</span>
         <span>R</span>
         <span>U</span>
         <span>E</span></p>`;
     } else {
-      outputEl.innerHTML = `
+      outputEl.innerHTML =
+        message +
+        "not in my list" +
+        `
       <p id="negative">
         <span>F</span>
         <span>A</span>

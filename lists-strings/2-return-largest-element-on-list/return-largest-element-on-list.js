@@ -25,22 +25,18 @@ function printResult() {
   const inputVal = getElement("input").value;
   const outputEl = getElement("output");
 
-  const refactoredInputEl = inputListToWords(inputVal);
+  const toWords = inputListToWords(inputVal);
+  const outputList = buildHighlightedListOutput("", toWords);
+
+  console.log("output list", outputList);
+
+  outputEl.classList.remove("error");
 
   try {
-    let result = getLargestWord(refactoredInputEl);
-    for (let i = 0; i < result.length; i++) {
-      let currentLetter = result[i];
-
-      setTimeout(function () {
-        let span = document.createElement("span");
-        span.innerText = currentLetter;
-        span.classList.add("animated");
-
-        outputEl.appendChild(span);
-      }, (1000 * (i + 1)) / 10);
-    }
-    outputEl.innerHTML = `<p>Longest word.<span class="highlighted">Length : ${result.length}</span></p>`;
+    const result = inputListToWords(getLargestWord(toWords));
+    const message = `<span>Longest word (${result[0].length}):<br></span>`;
+    const formattedResult = formatListToOutput(result);
+    outputEl.innerHTML = outputList + message + formattedResult;
   } catch (exception) {
     handleException(exception);
   }

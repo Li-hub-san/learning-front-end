@@ -158,6 +158,10 @@
               <pre><code class="language-javascript">// 2. Write a function that returns the largest element in a list.
 
 function getLargestWord(list) {
+  if (list.length === 0) {
+    throw "Input a word list";
+  }
+
   let largestWord = list[0];
   let largestWordLength = largestWord.length;
 

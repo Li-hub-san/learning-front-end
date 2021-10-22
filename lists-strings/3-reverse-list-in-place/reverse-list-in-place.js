@@ -31,16 +31,22 @@ function printResult() {
   const outputEl = getElement("output");
 
   const clearedInputVal = inputListToStrings(inputListVal);
-  outputEl.classList.remove("error");
 
   let word = "list";
   if (clearedInputVal.length === 1) {
     word = "word";
   }
+
+  const outputList = buildHighlightedListOutput("", clearedInputVal);
+  const message = `<span>Reversed ${word}:</span><br>`;
+
+  outputEl.classList.remove("error");
+
   try {
-    outputEl.innerHTML = `<p>Reversed ${word}:<br>[ ${reverseAListInPlace(
-      clearedInputVal
-    )} ]</p>`;
+    const result = inputListToStrings(reverseAListInPlace(clearedInputVal));
+    const formattedResult = formatListToOutput(result, ", ");
+    console.log(formattedResult);
+    outputEl.innerHTML = outputList + message + formattedResult;
   } catch (exception) {
     handleException(exception);
   }

@@ -1,8 +1,5 @@
 // Lists, Strings
-// 13.Write a function that computes the list of the first 100 Fibonacci numbers.
-// The first two Fibonacci numbers are 1 and 1.
-// The n+1-st Fibonacci number can be computed by adding the n-th and the n-1-th Fibonacci number.
-// The first few are therefore 1, 1, 1+1=2, 1+2=3, 2+3=5, 3+5=8.
+// 13.Write a function that computes the list of the first 100 Fibonacci numbers. The first two Fibonacci numbers are 1 and 1. The 1st Fibonacci number can be computed by adding the n-th and the n-1-th Fibonacci number. The first few are therefore 1, 1, 1+1=2, 1+2=3, 2+3=5, 3+5=8.
 
 function getFirstNFibonacciNumbers(n) {
   let n1 = 0;
@@ -18,11 +15,6 @@ function getFirstNFibonacciNumbers(n) {
   return fbSequenceToN;
 }
 
-console.log(
-  "N numbers of the Fibonacci sequence are: ",
-  getFirstNFibonacciNumbers(100)
-);
-
 function printGetFirstNFibonacciNumbers() {
   const inputEl = getElement("input");
   const outputEl = getElement("output");
@@ -33,8 +25,10 @@ function printGetFirstNFibonacciNumbers() {
   }
 
   outputEl.innerHTML =
-    `<p>The first ${numberText} in the Fibonacci sequence:</p>` +
-    `<p>[ ${getFirstNFibonacciNumbers(inputEl.value).join(", ")} ]</p>`;
+    `<p class="highlighted">The first ${numberText} in the Fibonacci sequence:</p>` +
+    `<p>[&nbsp;${getFirstNFibonacciNumbers(inputEl.value).join(
+      ", "
+    )}&nbsp;]</p>`;
 
   enableEl("reset");
 }

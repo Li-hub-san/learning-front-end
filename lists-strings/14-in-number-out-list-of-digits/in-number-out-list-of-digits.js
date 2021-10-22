@@ -9,7 +9,8 @@ function printListOfDigits() {
   const result = inNOutList(inputEl.value).join(", ");
 
   outputEl.innerHTML =
-    `<p class>Digit list of ${inputEl.value}:</p>` + `<p>[ ${result} ]</p>`;
+    `<span class="highlighted">Digit list:</span>` +
+    `<p>[&nbsp;${result}&nbsp;]</p>`;
 
   enableEl("reset");
 }
@@ -34,33 +35,12 @@ function resetEls() {
   disableEl("reset");
 }
 
-function inputNumberOutputListOfDigits(number) {
-  let myOutput = [];
-  let myNumberToString = number.toString();
-
-  for (let i = 0; i < myNumberToString.length; i++) {
-    myOutput.push(+myNumberToString.charAt(i));
-  }
-  return myOutput;
-}
-
-// 14.1.wrote a function that takes a string and returns a number (just for fun)
-
-// let input = "Input value: ";
-// let output = "Output value: ";
-// let number = 2342;
-// let myNumber = 6565468798798787;
-// let array = ["2", "3", "4", "2"];
+// function inputNumberOutputListOfDigits(number) {
+//   let myOutput = [];
+//   let myNumberToString = number.toString();
 //
-// console.log(input, number);
-// console.log(output, inNOutList(number));
-//
-// console.log(input, myNumber);
-// console.log(output, inputNumberOutputListOfDigits(myNumber));
-//
-// console.log(input, array);
-// console.log(output, inStringOutN(array));
-// console.log(output, "1 ", inStringOutN(["123"]));
-// console.log(output, "2 ", inStringOutN(["8", "8", "6"]));
-// console.log(output, "3 ", inStringOutN(["ten"]));
-// console.log(output, "3 ", inStringOutN([456]));
+//   for (let i = 0; i < myNumberToString.length; i++) {
+//     myOutput.push(+myNumberToString.charAt(i));
+//   }
+//   return myOutput;
+// }

@@ -26,7 +26,7 @@ function printResult() {
 
     if (length > 0) {
       outputEl.innerHTML =
-        `${initialAnswer}` + `<p>[ ${output.join(", ")} ]</p>`;
+        `${initialAnswer}` + `<p>[&nbsp;${output.join(", ")}&nbsp;]</p>`;
     } else {
       outputEl.innerHTML = `<span class="no-match"><i class="bi-exclamation-circle-fill"></i> ${initialAnswer}</span>`;
     }

@@ -82,17 +82,17 @@
         <form action="#"
               onsubmit="printAlternatedList();return false;">
 
-          <label for="list1">List</label>
+          <label for="list1">List 1</label>
           <input type="text"
                  id="list1"
                  placeholder="e.g: 1 2 3"
                  autocomplete="off"
                  required>
 
-          <label for="list2">List</label>
+          <label for="list2">List 2</label>
           <input type="text"
                  id="list2"
-                 placeholder="e.g: something else"
+                 placeholder="e.g: one two three"
                  autocomplete="off"
                  required>
 
@@ -138,7 +138,8 @@
                     data-bs-toggle="tab"
                     data-bs-target="#html"
                     type="button"
-                    role="tab">HTML
+                    role="tab"
+                    disabled>HTML
             </button>
           </li>
           <li class="nav-item"
@@ -159,7 +160,22 @@
           <div class="tab-pane fade show active"
                id="javascript">
             <div class="body-panel tabs">
-              <pre><code class="language-javascript">3</code></pre>
+              <pre><code class="language-javascript">// 10.Write a function that combines two lists by alternating taking elements, e.g. [a,b,c],[1,2,3] becomes [a,1,b,2,c,3]
+
+function alternatingElementsBetweenTwoLists(list1, list2) {
+  let result = [];
+
+  while (list1.length > 0 || list2.length > 0) {
+    if (list1.length > 0) {
+      result.push(list1.shift());
+    }
+
+    if (list2.length > 0) {
+      result.push(list2.shift());
+    }
+  }
+  return result;
+}</code></pre>
 
             </div>
           </div>
@@ -167,15 +183,15 @@
           <div class="tab-pane fade"
                id="html">
             <div class="body-panel tabs">
-              <pre><code class="language-html">&lt;!-- Use onsubmit property on the form tag followed by the action
-and return false, so that the submit button won't reload the page upon click--&gt;
-</code></pre>
+              <pre><code class="language-html"></code></pre>
             </div>
           </div>
 
           <div class="tab-pane fade"
                id="css">
-            <div class="body-panel tabs">css content</div>
+            <div class="body-panel tabs">
+              <pre><code></code></pre>
+            </div>
           </div>
 
         </div>

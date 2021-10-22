@@ -77,7 +77,7 @@
       <div class="body-panel">
         <h3><small>exercise - 16</small>lists & strings</h3>
         <h6>Input a number and its base and convert it into a different base.
-          <br>e.g.: number 101101 in base 2, get converted in base 10 to 45.</h6>
+          <br>e.g.: number 101101 in base 2, get converted in base 10 to number 45.</h6>
 
         <form action="#"
               onsubmit="printBaseNumbers();return false">
@@ -86,13 +86,14 @@
           <input id="number"
                  type="text"
                  placeholder="e.g.: 101101"
+                 autocomplete="off"
                  required/>
 
           <label for="base1">Number base</label>
           <input id="base1"
                  type="number"
                  min="2"
-                 max="36"
+                 max=16
                  placeholder="e.g.: 2"
                  autocomplete="off"
                  required/>
@@ -101,7 +102,7 @@
           <input id="base2"
                  type="number"
                  min="2"
-                 max="76"
+                 max="16"
                  placeholder="e.g.: 10"
                  autocomplete="off"
                  required/>
@@ -149,7 +150,7 @@
                     data-bs-target="#html"
                     type="button"
                     role="tab"
-            disabled>HTML
+                    disabled>HTML
             </button>
           </li>
           <li class="nav-item"
@@ -170,7 +171,84 @@
           <div class="tab-pane fade show active"
                id="javascript">
             <div class="body-panel tabs">
-              <pre><code class="language-javascript"></code></pre>
+              <pre><code class="language-javascript">// 16. Write a function that takes a list of numbers, a starting base b1 and a target base b2 and interprets the list as a number in base b1 and converts it into a number in base b2 (in the form of a list-of-digits). So for example [2,1,0] in base 3 gets converted to base 10 as [2,1].
+
+function changeNumberBase(number, b1, b2) {
+  const array = number.toString().split("").reverse();
+
+  let sumConverted = 0;
+
+  for (let i = array.length - 1; i >= 0; i--) {
+    const currentValue = hexadecimalToDecimal(array[i], b1);
+    const convertToDecimal = currentValue * Math.pow(b1, i);
+
+    sumConverted += convertToDecimal;
+  }
+
+  return sumConverted.toString(b2).split("").join(", ");
+}
+
+function hexadecimalToDecimal(value, base) {
+  let number;
+
+  switch (value.toUpperCase()) {
+    case "A":
+      number = 10;
+      break;
+
+    case "B":
+      number = 11;
+      break;
+
+    case "C":
+      number = 12;
+      break;
+
+    case "D":
+      number = 13;
+      break;
+
+    case "E":
+      number = 14;
+      break;
+
+    case "F":
+      number = 15;
+      break;
+
+    default:
+      number = +value;
+  }
+
+  if (isNaN(number)) {
+    throw "Invalid number";
+  }
+
+  if (number > base - 1) {
+    throwInvalidBase(number + 1);
+  }
+
+  return number;
+}
+
+function throwInvalidBase(minBase) {
+  throw `Invalid number base<br>Minimum base for current number : ${minBase}`;
+}
+
+function verifyBase(number, base) {
+  let largestNumber = +number[0];
+  for (let i = 1; i < number.length; i++) {
+    let currentNumber = +number[i];
+
+    if (currentNumber > largestNumber) {
+      largestNumber = currentNumber;
+    }
+  }
+
+  if (largestNumber >= base) {
+    throwInvalidBase(largestNumber + 1);
+  }
+}</code></pre>
 
             </div>
           </div>

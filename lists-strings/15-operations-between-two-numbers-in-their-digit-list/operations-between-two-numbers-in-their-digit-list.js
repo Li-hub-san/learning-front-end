@@ -23,13 +23,15 @@ function printOperationBetweenLists() {
   const outputDiv = numberToList(divResult).join(", ");
 
   outputEl.innerHTML =
-    `<p class="highlighted">[ ${numberToList(number1).join(
+    `<p class="highlighted">List 1: [&nbsp;${numberToList(number1).join(
       ", "
-    )} ]<br>[ ${numberToList(number2).join(", ")} ]<p/>` +
-    `<p>Sum: ${sumResult}<br><span class="highlighted">New list: </span>[ ${outputSum} ]</p>` +
-    `<p>Subtraction: ${subResult}<br><span class="highlighted">New list: </span>[ ${outputSub} ]</p>` +
-    `<p>Product: ${prodResult}<br><span class="highlighted">New list: </span>[ ${outputProd} ]</p>` +
-    `<p>Division: ${divResult}<br><span class="highlighted">New list: </span>[ ${outputDiv} ]</p>`;
+    )}&nbsp;]<br>List 2: [&nbsp;${numberToList(number2).join(
+      ", "
+    )}&nbsp;]<p/>` +
+    `<p>Sum: ${sumResult}<br><span class="highlighted">New list: </span>[&nbsp;${outputSum}&nbsp;]</p>` +
+    `<p>Subtraction: ${subResult}<br><span class="highlighted">New list: </span>[&nbsp;${outputSub}&nbsp;]</p>` +
+    `<p>Product: ${prodResult}<br><span class="highlighted">New list: </span>[&nbsp;${outputProd}&nbsp;]</p>` +
+    `<p>Division: ${divResult}<br><span class="highlighted">New list: </span>[&nbsp;${outputDiv}&nbsp;]</p>`;
 
   enableEl("reset");
 }
@@ -61,26 +63,3 @@ function numberToList(number) {
       return digit === "." || digit === "," || digit === "-" ? digit : +digit;
     });
 }
-
-// let digitList1 = 53;
-// let digitList2 = 12;
-// let outputList = "Output: ";
-
-// console.log("list 1: ", digitList1);
-// console.log("list 2: ", digitList2);
-// console.log(
-//   outputList,
-//   operationBetweenNumbersWithinList(digitList1, digitList2, "+")
-// );
-// console.log(
-//   outputList,
-//   operationBetweenNumbersWithinList(digitList1, digitList2, "-")
-// );
-// console.log(
-//   outputList,
-//   operationBetweenNumbersWithinList(digitList1, digitList2, "*")
-// );
-// console.log(
-//   outputList,
-//   operationBetweenNumbersWithinList(digitList1, digitList2, "/")
-// );

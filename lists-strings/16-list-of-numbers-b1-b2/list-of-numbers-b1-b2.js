@@ -3,7 +3,7 @@
 // in base b1 and converts it into a number in base b2 (in the form of a list-of-digits).
 // So for example [2,1,0] in base 3 gets converted to base 10 as [2,1].
 
-function changeBase(number, b1, b2) {
+function changeNumberBase(number, b1, b2) {
   const array = number.toString().split("").reverse();
 
   let sumConverted = 0;
@@ -91,10 +91,10 @@ function printBaseNumbers() {
   try {
     verifyBase(inputNumber, inputBase1);
     const inputNumberElToArr = inputNumber.toString().split("").join(", ");
-    const outputResult = changeBase(inputNumber, inputBase1, inputBase2);
+    const outputResult = changeNumberBase(inputNumber, inputBase1, inputBase2);
     outputEl.innerHTML =
-      `<p><span class="highlighted">Your list - base ${inputBase1} : </span><span>[ ${inputNumberElToArr} ]</span></p>` +
-      `<p><span class="highlighted">New list - base ${inputBase2} : </span><span>[ ${outputResult} ]</span></p>`;
+      `<p><span class="highlighted">Your list - base ${inputBase1} : </span><span>[&nbsp;${inputNumberElToArr}&nbsp;]</span></p>` +
+      `<p><span class="highlighted">New list - base ${inputBase2} : </span><span>[&nbsp;${outputResult}&nbsp;]</span></p>`;
   } catch (exception) {
     handleException(exception);
   }

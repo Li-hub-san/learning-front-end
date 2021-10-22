@@ -153,6 +153,12 @@ body {
   font-size: 0.700em;
 }
 
+@media (max-width: 300px) {
+  .container .row .body-panel h3 {
+    font-size: 20px;
+  }
+}
+
 .container .row .body-panel h6 {
   text-align: left;
   margin: 20px 0 30px;
@@ -175,7 +181,7 @@ body {
 
 .container .row .body-panel form .input-wrapper {
   width: 222px;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 label {
@@ -249,9 +255,6 @@ form {
   word-break: break-word;
 }
 
-
-
-
 span.error {
   color: #c03f02;
 }
@@ -260,7 +263,6 @@ span.error {
   color: #C26E4A;
   font-weight: bold;
   font-size: initial;
-  /*padding: 8px 30px;*/
   text-align: center;
 }
 
@@ -271,7 +273,7 @@ span.error {
 /* +info */
 
 #info-wrapper {
- text-align: left;
+  text-align: left;
   position: absolute;
   bottom: 5px;
 }
