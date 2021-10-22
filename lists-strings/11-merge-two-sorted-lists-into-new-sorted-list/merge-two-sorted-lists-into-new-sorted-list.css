@@ -3,8 +3,10 @@
   width: 215px;
 }
 
-.output-lists {
-  margin: 5px 0;
+label {
+  font-size: 14px;
   font-weight: bold;
-  color: #C26E4A;
+  text-align: left;
+  width: 215px;
+  color: #0B2E4B;
 }

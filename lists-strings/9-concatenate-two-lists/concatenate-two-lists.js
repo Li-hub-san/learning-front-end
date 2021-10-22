@@ -37,7 +37,7 @@ function concatenateAndPrintTwoLists() {
 
 function concatArray(arr1, arr2) {
   if (arr1.length === 0 || arr2.length === 0) {
-    throw "Empty list";
+    throw "Input words or numbers";
   }
 
   return arr1.concat(arr2);

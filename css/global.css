@@ -173,17 +173,22 @@ body {
   flex-wrap: wrap;
 }
 
+.container .row .body-panel form .input-wrapper {
+  width: 222px;
+  justify-content:space-between;
+}
+
 label {
   font-size: 14px;
   font-weight: bold;
   text-align: left;
-  width: 168px;
+  width: 215px;
   color: #0B2E4B;
 }
 
 /*disabled option on bottom*/
 .container .row .body-panel button {
-  width: 80px;
+  width: 103px;
   height: 28px;
   font-size: 16px;
   color: white;
@@ -200,7 +205,7 @@ label {
 
 .container .row .body-panel input {
   margin: 1px 4px 10px;
-  width: 168px;
+  width: 215px;
   height: 28px;
   font-size: 15px;
   border-radius: 0;
