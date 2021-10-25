@@ -14,9 +14,9 @@ function printFirst20PerfectSquares() {
 }
 
 function formatOutput(output) {
-  const message = "20 first perfect squares are:";
-  output = output.toString().replace(/,/g, ", ");
-  return `${message} <br><br> [&nbsp;${output}&nbsp;]`;
+  const message = `<p class="highlighted">20 first perfect squares are:</p>`;
+  output = formatListToOutput(output, ", ");
+  return message + output;
 }
 
 function getFirst20PerfectSquares() {

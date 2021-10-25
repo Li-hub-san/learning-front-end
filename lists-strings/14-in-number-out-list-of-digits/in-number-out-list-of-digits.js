@@ -6,22 +6,20 @@ function printListOfDigits() {
   const inputEl = getElement("input");
   const outputEl = getElement("output");
 
-  const result = inNOutList(inputEl.value).join(", ");
+  const message = `<p class="highlighted">Digit list:</p>`;
+  const numberList = stringToNumberList(inputEl.value);
+  const formattedOutput = formatListToOutput(numberList, ", ");
 
-  outputEl.innerHTML =
-    `<span class="highlighted">Digit list:</span>` +
-    `<p>[&nbsp;${result}&nbsp;]</p>`;
+  outputEl.innerHTML = message + formattedOutput;
 
   enableEl("reset");
 }
 
-function inNOutList(n) {
+function stringToNumberList(n) {
   return n
-    .toString()
     .split("")
-    .map(function (el) {
-      return +el;
-    });
+    .filter((n) => !isNaN(n))
+    .map((n) => +n);
 }
 
 function resetEls() {

@@ -1,5 +1,21 @@
 // Lists, Strings
 // 6.Write a function that computes the running total of a list.
+function runTotalUsingLoop(numbers, loopType) {
+  switch (loopType) {
+    case "for-loop":
+      return runningTotalUsingForLoop(numbers);
+
+    case "while-loop":
+      return runningTotalUsingWhileLoop(numbers);
+
+    case "recursion":
+      return runningTotalUsingRecursion(numbers);
+
+    default:
+      throw "Select a loop type";
+  }
+}
+
 function runningTotalUsingForLoop(list) {
   let total = 0;
 
@@ -31,28 +47,28 @@ function runningTotalUsingRecursion(list) {
 }
 
 function printResult() {
-  const numbers = getElement("input")
-    .value.replace(/[^0-9]+/g, ",")
-    .split(",")
-    .map(function (el) {
-      return +el;
-    });
-
+  const inputEl = getElement("input");
   const outputEl = getElement("output");
+  const dropdownEl = getElement("dropdown");
 
-  const value = getElement("dropdown").getAttribute("value");
-  switch (value) {
-    case "for":
-      outputEl.innerHTML = runningTotalUsingForLoop(numbers).toString();
-      break;
-    case "while":
-      outputEl.innerHTML = runningTotalUsingWhileLoop(numbers).toString();
-      break;
-    case "recursion":
-      outputEl.innerHTML = runningTotalUsingRecursion(numbers).toString();
-      break;
+  const inputVal = inputEl.value;
+  const numbers = inputListToNumbers(inputVal);
+  const dropdownValue = dropdownEl.getAttribute("value");
+
+  outputEl.classList.remove("error");
+  try {
+    let result;
+    const inputList = buildHighlightedListOutput("", numbers);
+    const message = `<span>Total using ${dropdownValue}:<br></span>`;
+    result = runTotalUsingLoop(numbers, dropdownValue);
+    const formattedResult = formatListToOutput([result]);
+    outputEl.innerHTML =
+      inputList + message.replace("-", " ") + formattedResult;
+
+    enableEl("reset");
+  } catch (exception) {
+    handleException(exception);
   }
-  enableEl("reset");
 }
 
 function resetData() {

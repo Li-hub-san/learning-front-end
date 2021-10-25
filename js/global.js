@@ -32,7 +32,7 @@ function stringToArray(string) {
 }
 
 function inputListToNumbers(numbersString) {
-  let cleanNumbersString = numbersString.replace(/[^\s0-9,]/g, "");
+  let cleanNumbersString = numbersString.replace(/[^\s0-9,-]|-([^0-9]|$)/g, "");
   let cleanList = stringToArray(cleanNumbersString);
   return cleanList.map((s) => +s);
 }
