@@ -159,17 +159,20 @@
           <div class="tab-pane fade show active"
                id="javascript">
             <div class="body-panel tabs">
-              <pre><code class="language-javascript">/**
- *
- * @param {string[]} list
- * @param {string} element
- * @returns {boolean}
+              <pre><code class="language-javascript">// 4.Write a function that checks whether an element occurs in a list.
+/**
+ * Check if string exists within list.
+ * @param {string[]} haystack list to iterate
+ * @param {string} needle string to look for
+ * @returns {boolean} Whether list contains the string.
  */
-function listHasElement(list, element) {
-  const lowerCaseEl = element.toLowerCase();
+function listContainsString(haystack, needle) {
+  validateNeedle(needle);
 
-  for (let i = 0; i < list.length; i++) {
-    if (list[i] === lowerCaseEl) {
+  const lowerCaseNeedle = needle.toLowerCase();
+
+  for (let i = 0; i < haystack.length; i++) {
+    if (haystack[i].toLowerCase() === lowerCaseNeedle) {
       return true;
     }
   }

@@ -44,7 +44,6 @@ function printResult() {
 function resetButton() {
   const inputEl = getElement("input");
   const outputEl = getElement("output");
-  const outputListEl = getElement("user-list");
   const infoWrapperEl = getElement("info-wrapper");
   const infoEl = getElement("info");
   const collapsableDivEl = getElement("collapseExample");
@@ -52,9 +51,9 @@ function resetButton() {
   inputEl.value = "";
   outputEl.innerHTML = "";
   infoWrapperEl.classList.add("invisible");
-  outputListEl.innerHTML = "";
   infoEl.setAttribute("aria-expanded", "false");
   collapsableDivEl.setAttribute("class", "collapse");
+
   inputEl.focus();
   disableEl("reset");
 }

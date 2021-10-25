@@ -188,7 +188,7 @@ label {
   font-size: 14px;
   font-weight: bold;
   text-align: left;
-  width: 215px;
+  width: 214px;
   color: #0B2E4B;
 }
 
@@ -273,10 +273,25 @@ span.error {
 /* +info */
 
 #info-wrapper {
+  width: 95%;
+  border-top: 1px solid #86A2B9;
   text-align: left;
-  position: absolute;
-  bottom: 5px;
+  background-color: white;
 }
+
+@media (max-width: 767px) {
+  #info-wrapper {
+    border-top: none;
+  }
+}
+
+@media (min-width: 768px) {
+  #info-wrapper {
+    position: absolute;
+    bottom: 5px;
+  }
+}
+
 
 #info {
   background: white;
@@ -324,7 +339,7 @@ span.error {
 
 .card span {
   padding: 2px 8px 20px;
-  margin-left: -5px;
+  margin-left: -8px;
   color: #C26E4A;
 }
 

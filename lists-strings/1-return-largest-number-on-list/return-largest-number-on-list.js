@@ -7,13 +7,12 @@ function printResult() {
 
   outputEl.classList.remove("error");
   try {
-    outputEl.innerHTML =
-      `<p class="highlighted">Your list:<br>[&nbsp${array.join(
-        ", "
-      )}&nbsp]</p>` +
-      `<p>Largest number in the list: [&nbsp${getLargestNumber(
-        array
-      )}&nbsp]</p>`;
+    const message = `<span>Largest number in the list:<br></span>`;
+    const userListToOutput = buildHighlightedListOutput("", array);
+    const largestNumber = getLargestNumber(array);
+    const formattedResult = formatListToOutput([largestNumber]);
+
+    outputEl.innerHTML = userListToOutput + message + formattedResult;
   } catch (exception) {
     handleException(exception);
   }

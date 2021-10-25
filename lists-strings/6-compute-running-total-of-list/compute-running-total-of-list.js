@@ -1,6 +1,6 @@
 // Lists, Strings
 // 6.Write a function that computes the running total of a list.
-function runningTotalOfList(list) {
+function runningTotalUsingForLoop(list) {
   let total = 0;
 
   for (let i = 0; i < list.length; i++) {
@@ -10,7 +10,7 @@ function runningTotalOfList(list) {
   return total;
 }
 
-function sumOfNumbersInListUsingWhileLoop(list) {
+function runningTotalUsingWhileLoop(list) {
   let i = 0;
   let totalSum = 0;
 
@@ -22,16 +22,13 @@ function sumOfNumbersInListUsingWhileLoop(list) {
   return totalSum;
 }
 
-function sumOfNumbersInListUsingRecursion(list) {
+function runningTotalUsingRecursion(list) {
   if (list.length === 0) {
     return 0;
   }
 
-  return list[0] + sumOfNumbersInListUsingRecursion(list.slice(1));
+  return list[0] + runningTotalUsingRecursion(list.slice(1));
 }
-
-// let list = [3, 7, 12, 5];
-// console.log(runningTotalOfList(list));
 
 function printResult() {
   const numbers = getElement("input")
@@ -46,16 +43,15 @@ function printResult() {
   const value = getElement("dropdown").getAttribute("value");
   switch (value) {
     case "for":
-      outputEl.innerHTML = runningTotalOfList(numbers).toString();
+      outputEl.innerHTML = runningTotalUsingForLoop(numbers).toString();
       break;
     case "while":
-      outputEl.innerHTML = sumOfNumbersInListUsingWhileLoop(numbers).toString();
+      outputEl.innerHTML = runningTotalUsingWhileLoop(numbers).toString();
       break;
     case "recursion":
-      outputEl.innerHTML = sumOfNumbersInListUsingRecursion(numbers).toString();
+      outputEl.innerHTML = runningTotalUsingRecursion(numbers).toString();
       break;
   }
-
   enableEl("reset");
 }
 
@@ -65,12 +61,10 @@ function resetData() {
 
   const inputEl = getElement("input");
   const outputEl = getElement("output");
-  const inputListEl = getElement("user-list");
 
+  outputEl.innerHTML = "";
   inputEl.value = "";
   inputEl.focus();
-  outputEl.innerHTML = "";
-  inputListEl.innerHTML = "";
 }
 
 $(".dropdown-menu a").on("click", function () {

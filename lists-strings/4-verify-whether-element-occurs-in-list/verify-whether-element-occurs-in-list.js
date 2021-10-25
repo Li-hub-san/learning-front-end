@@ -10,26 +10,29 @@ const secretList = [
   "development",
 ];
 
-/**
- *
- * @param {string[]} list
- * @param {string} element
- * @returns {boolean}
- */
-function listHasElement(list, element) {
-  const lowerCaseEl = element.toLowerCase();
-
-  if (inputListToWords(element).length === 0) {
+function validateNeedle(needle) {
+  if (inputListToWords(needle).length === 0) {
     throw "Input any word";
   }
 
-  console.log(element, element.split(" ").length);
-  if (element.split(" ").length > 1) {
+  if (needle.split(" ").length > 1) {
     throw "Try one word at a time";
   }
+}
 
-  for (let i = 0; i < list.length; i++) {
-    if (list[i] === lowerCaseEl) {
+/**
+ * Check if string exists within list.
+ * @param {string[]} haystack list to iterate
+ * @param {string} needle string to look for
+ * @returns {boolean} Whether list contains the string.
+ */
+function listContainsString(haystack, needle) {
+  validateNeedle(needle);
+
+  const lowerCaseNeedle = needle.toLowerCase();
+
+  for (let i = 0; i < haystack.length; i++) {
+    if (haystack[i].toLowerCase() === lowerCaseNeedle) {
       return true;
     }
   }
@@ -40,10 +43,10 @@ function printResult() {
   const inputVal = getElement("input").value;
   const outputEl = getElement("output");
 
-  const message = `<span>[ ${inputVal} ] is </span>`;
+  const message = `<span>[&nbsp;${inputVal}&nbsp;] is </span>`;
 
   try {
-    const result = listHasElement(secretList, inputVal);
+    const result = listContainsString(secretList, inputVal);
 
     if (result) {
       outputEl.innerHTML =

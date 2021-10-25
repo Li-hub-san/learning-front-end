@@ -32,7 +32,9 @@ function stringToArray(string) {
 }
 
 function inputListToNumbers(numbersString) {
-  return stringToArray(numbersString.replace(/[^\s0-9,]/g, "")).map((s) => +s);
+  let cleanNumbersString = numbersString.replace(/[^\s0-9,]/g, "");
+  let cleanList = stringToArray(cleanNumbersString);
+  return cleanList.map((s) => +s);
 }
 
 function inputListToStrings(string) {
@@ -40,7 +42,8 @@ function inputListToStrings(string) {
 }
 
 function inputListToWords(wordsString) {
-  return stringToArray(wordsString.replace(/[^\sA-Za-z,]/g, ""));
+  let cleanString = wordsString.replace(/[^\sA-Za-z,]/g, "");
+  return stringToArray(cleanString);
 }
 
 function resetButton(
