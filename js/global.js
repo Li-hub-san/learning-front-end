@@ -38,7 +38,7 @@ function inputListToNumbers(numbersString) {
 }
 
 function inputListToStrings(string) {
-  return stringToArray(string.replace(/[^\s0-9A-Za-z,]/g, ""));
+  return stringToArray(string.replace(/[^\s0-9A-Za-z,-]|-([^0-9]|$)/g, ""));
 }
 
 function inputListToWords(wordsString) {

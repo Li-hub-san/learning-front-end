@@ -32,13 +32,3 @@ function resetEls() {
   inputEl.focus();
   disableEl("reset");
 }
-
-// function inputNumberOutputListOfDigits(number) {
-//   let myOutput = [];
-//   let myNumberToString = number.toString();
-//
-//   for (let i = 0; i < myNumberToString.length; i++) {
-//     myOutput.push(+myNumberToString.charAt(i));
-//   }
-//   return myOutput;
-// }

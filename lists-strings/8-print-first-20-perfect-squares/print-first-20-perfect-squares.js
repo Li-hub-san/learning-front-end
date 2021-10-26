@@ -6,19 +6,6 @@
 // Twelve for example is not a perfect square because there is no natural number m so that m*m=12
 // (This question is tricky if your programming language makes it difficult to pass functions as arguments.)
 
-function printFirst20PerfectSquares() {
-  const outPutEl = getElement("output");
-  outPutEl.innerHTML = formatOutput(getFirst20PerfectSquares());
-  enableEl("reset");
-  disableEl("submit");
-}
-
-function formatOutput(output) {
-  const message = `<p class="highlighted">20 first perfect squares are:</p>`;
-  output = formatListToOutput(output, ", ");
-  return message + output;
-}
-
 function getFirst20PerfectSquares() {
   const perfectSquares = [];
 
@@ -37,10 +24,15 @@ function isNaturalNumber(number) {
   return Math.floor(number) === +number;
 }
 
-function reset() {
+function printFirst20PerfectSquares() {
   const outPutEl = getElement("output");
+  outPutEl.innerHTML = formatOutput(getFirst20PerfectSquares());
+  enableEl("reset");
+  disableEl("submit");
+}
 
-  outPutEl.innerHTML = "";
-  enableEl("submit");
-  disableEl("reset");
+function formatOutput(output) {
+  const message = `<p class="highlighted">20 first perfect squares are:</p>`;
+  output = formatListToOutput(output, ", ");
+  return message + output;
 }

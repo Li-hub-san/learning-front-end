@@ -82,7 +82,7 @@
             Print
           </button>
           <button id="reset"
-                  onclick="reset()"
+                  onclick="resetButton([])"
                   disabled>
             Reset
           </button>
@@ -118,7 +118,8 @@
                     data-bs-toggle="tab"
                     data-bs-target="#html"
                     type="button"
-                    role="tab">HTML
+                    role="tab"
+                    disabled>HTML
             </button>
           </li>
           <li class="nav-item"
@@ -139,7 +140,25 @@
           <div class="tab-pane fade show active"
                id="javascript">
             <div class="body-panel tabs">
-              <pre><code class="language-javascript">3</code></pre>
+              <pre><code class="language-javascript">// 9.Write a function on_all that applies a function to every element of a list. Use it to print the first twenty perfect squares of that list. The perfect squares can be found by multiplying each natural number with itself. The first few perfect squares are 1*1=1 2*2=4 3*3=9. Twelve for example is not a perfect square because there is no natural number m so that m*m=12
+
+function getFirst20PerfectSquares() {
+  const perfectSquares = [];
+
+  for (let i = 1; perfectSquares.length < 20; i++) {
+    let currentValueSquareRoot = Math.sqrt(i);
+
+    if (isNaturalNumber(currentValueSquareRoot)) {
+      perfectSquares.push(i);
+    }
+  }
+
+  return perfectSquares;
+}
+
+function isNaturalNumber(number) {
+  return Math.floor(number) === +number;
+}</code></pre>
 
             </div>
           </div>
@@ -147,9 +166,7 @@
           <div class="tab-pane fade"
                id="html">
             <div class="body-panel tabs">
-              <pre><code class="language-html">&lt;!-- Use onsubmit property on the form tag followed by the action
-and return false, so that the submit button won't reload the page upon click--&gt;
-</code></pre>
+              <pre><code class="language-html"></code></pre>
             </div>
           </div>
 

@@ -165,6 +165,14 @@ function rotateListByKElements(list, k) {
   let outputList = [];
   const originalList = [...list];
 
+  if (list.length === 0) {
+    throw "List must contain words or numbers";
+  }
+
+  if (k > list.length) {
+    throw `Max rotation number for this input: ${list.length}`;
+  }
+
   for (let i = 0; i < list.length; i++) {
     list = list.slice(k).concat(list.slice(0, k));
     outputList.push(list);

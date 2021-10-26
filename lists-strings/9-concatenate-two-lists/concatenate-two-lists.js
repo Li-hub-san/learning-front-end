@@ -1,18 +1,8 @@
 // Lists, Strings
-// 10.Write a function that concatenates two lists.
-
-// function concatenateTwoLists(list1, list2) {
-//   return list1.concat(list2);
-// }
-//
-// const listA = ["a", "b", "c"];
-// const listB = [1, 2, 3];
-//
-// console.log(concatenateTwoLists(listA, listB));
+// 9.Write a function that concatenates two lists.
 
 function concatenateAndPrintTwoLists() {
   const outputEl = getElement("output");
-  const outputMessage = "Your concatenated list: " + "<br>";
 
   const inputVal1 = getElement("list1").value;
   const inputArr1 = inputListToStrings(inputVal1);
@@ -21,13 +11,16 @@ function concatenateAndPrintTwoLists() {
   const inputArr2 = inputListToStrings(inputVal2);
 
   outputEl.classList.remove("error");
+  const outputsList1 = buildHighlightedListOutput("1", inputArr1);
+  const outputsList2 = buildHighlightedListOutput("2", inputArr2);
+  const outputMessage = `<span>Your concatenated list:</span><br>`;
 
   try {
+    const output = concatArray(inputArr1, inputArr2);
+    const formattedOutput = formatListToOutput(output, ", ");
+
     outputEl.innerHTML =
-      outputMessage +
-      "[ " +
-      concatArray(inputArr1, inputArr2).join(", ") +
-      " ]";
+      outputsList1 + outputsList2 + outputMessage + formattedOutput;
   } catch (exception) {
     handleException(exception);
   }

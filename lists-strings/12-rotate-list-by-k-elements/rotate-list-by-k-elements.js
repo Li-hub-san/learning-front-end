@@ -21,6 +21,7 @@ function rotateListByKElements(list, k) {
       break;
     }
   }
+
   return outputList;
 }
 
