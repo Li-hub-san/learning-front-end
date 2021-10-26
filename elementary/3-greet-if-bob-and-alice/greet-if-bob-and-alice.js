@@ -10,6 +10,7 @@
  */
 function greetByName(name) {
   name = name.toLowerCase();
+
   if (name === "alice" || name === "bob") {
     return "Hi " + capitalize(name) + "!";
   } else {
@@ -25,8 +26,8 @@ function capitalize(name) {
 
 // connecting solution to DOM
 function printGreeting() {
-  const userNameEl = getElement("input");
-  const newArr = greetByName(userNameEl.value).split(",");
+  const userNameEl = getElement("input").value.replace(/[^\sA-Za-z]/g, "");
+  const newArr = greetByName(userNameEl).split(",");
 
   let iIndex = 0; // start printing array at this position
   let iTextPos = 0; // initialise text position
@@ -43,7 +44,7 @@ function typewriter(array, arrLength, iIndex, iTextPos, sContents) {
   let destination = document.getElementById("output");
 
   while (iRow < iIndex) {
-    sContents += array[iRow++] + "<br />";
+    sContents += array[iRow++] + "<br/>";
   }
   destination.innerHTML =
     sContents +

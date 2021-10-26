@@ -4,13 +4,28 @@
 // connecting solution to DOM
 function printGreetToUser() {
   const nameEl = getElement("input").value;
-  const returnEl = getElement("output");
+  const outputEl = getElement("output");
 
-  returnEl.innerHTML = `<p><span>Hello </span><span>${nameEl}</span><span>!</span></p>`;
+  try {
+    outputEl.innerHTML = `<p><span>Hello </span><span>${greetUserByName(
+      nameEl
+    )}</span><span>!</span></p>`;
+  } catch (exception) {
+    handleException(exception);
+  }
+
   enableEl("reset");
 }
 
 function greetUserByName(name) {
-  const greet = "Hello ";
-  return greet + name + "!";
+  validateOneName(name);
+
+  return name;
+}
+
+function validateOneName(name) {
+  if (name.split(" ").length > 1) {
+    throw "Input one name";
+  }
+  return name;
 }
