@@ -70,16 +70,17 @@
       <div class="body-panel">
         <h3><small>exercise - 5</small>Elementary</h3>
         <h6>Calculate sum between 1 and N.
-          <br>Only multiples of 3 and 5 will be considered in the sum.</h6>
+          <br>Only <strong>multiples</strong> of <strong>3</strong> and <strong>5</strong> will be considered in the sum.</h6>
 
         <form action="#"
               onsubmit="printResult(); return false">
 
-          <label for="input">Number</label>
+          <label for="input">Number (N)</label>
           <input id="input"
                  placeholder="0"
                  type="number"
                  autocomplete="off"
+                 min="3"
                  max="9999999"
                  required/>
 

@@ -2,7 +2,12 @@
 // 5. Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,…,n.
 
 function chooseEitherSumOrProductOf1ToN(number, operator) {
-  if (operator !== "+" && operator !== "*") {
+  if (
+    operator !== "+" &&
+    operator !== "*" &&
+    operator.toLowerCase() !== "x" &&
+    operator !== "×"
+  ) {
     throw "Invalid operator";
   }
 
@@ -24,7 +29,7 @@ function chooseEitherSumOrProductOf1ToN(number, operator) {
     return "Sum" + message;
   }
 
-  if (operator === "*") {
+  if (operator === "*" || operator.toLowerCase() === "x" || operator === "×") {
     return "Product" + message;
   }
 }
@@ -54,7 +59,7 @@ function returnTotal(total, operator, i) {
     total += i;
   }
 
-  if (operator === "*") {
+  if (operator === "*" || operator.toLowerCase() === "x" || operator === "×") {
     total *= i;
   }
 

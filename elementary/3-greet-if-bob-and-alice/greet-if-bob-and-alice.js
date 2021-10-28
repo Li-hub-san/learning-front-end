@@ -9,13 +9,16 @@
  * @returns {string} greeting with or without the name condition's depending.
  */
 function greetByName(name) {
-  name = name.toLowerCase();
+  const names = name.replace(/[^a-zA-z\s]/, "").split(" ");
 
-  if (name === "alice" || name === "bob") {
-    return "Hi " + capitalize(name) + "!";
-  } else {
-    return "Hello stranger!";
+  for (let i = 0; i < names.length; i++) {
+    let currentName = names[i].toLowerCase();
+
+    if (currentName.match(/^(alice|bob)$/)) {
+      return "Hi " + capitalize(currentName) + "!";
+    }
   }
+  return "Hello stranger!";
 }
 
 function capitalize(name) {
